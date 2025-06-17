@@ -6,12 +6,52 @@ import {
   TrendingUp,
   Users,
   ArrowRight,
+  Linkedin,
+  Github,
+  Mail,
 } from "lucide-react";
 
 const AboutPage = () => {
   useEffect(() => {
     document.title = "About | Saan-hub Solutions";
   }, []);
+
+  const teamMembers = [
+    {
+      name: "Success Adedeji Adewale N",
+      role: "Founder & Lead Developer",
+      image: "/saan.jpg", // Add your image path here
+      bio: "Full-stack developer with expertise in React, Node.js, and AI integration. Passionate about creating innovative solutions that drive business growth.",
+      social: {
+        linkedin: "https://www.linkedin.com/in/nuruade", // Replace with actual LinkedIn URL
+        github: "https://www.github.com/djsmacker01/", // Replace with actual GitHub URL
+        email: "mailto:adedeji.adewale2022@gmail.com", // Replace with actual email
+      },
+    },
+    {
+      name: "Soji",
+      role: "IT Support Technician",
+      image: "/team/soji.jpg", // Add your image path here
+      bio: "Experienced IT support professional specializing in system administration, network troubleshooting, and technical support. Dedicated to providing efficient solutions and excellent customer service.",
+      social: {
+        linkedin: "https://www.linkedin.com/in/nuruade/", // Replace with actual LinkedIn URL
+        github: "https://www.github.com/djsmacker01", // Replace with actual GitHub URL
+        email: "mailto:soji@example.com", // Replace with actual email
+      },
+    },
+    {
+      name: "Nurudeen",
+      role: "Mechanical Engineer",
+      image: "/saan-hub-logo.jpg", // Add your image path here
+      bio: "Skilled mechanical engineer with expertise in design, analysis, and manufacturing processes. Specializing in product development, CAD modeling, and mechanical systems optimization.",
+      social: {
+        linkedin: "https://www.linkedin.com/in/nuruade/",
+        github: "https://github.com/djsmacker01/",
+        email: "mailto:adedeji.adewale2022@gmail.com",
+      },
+    },
+    // Add more team members as needed
+  ];
 
   const sections = [
     {
@@ -48,7 +88,7 @@ const AboutPage = () => {
     <div className="space-y-12 py-8">
       {/* Hero Section */}
       <div className="text-center mb-16 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl transform -skew-y-6"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl transform -skew-y-6" />
         <div className="relative">
           <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-fade-in">
             About Saan-hub Solutions
@@ -117,6 +157,74 @@ const AboutPage = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Team Profiles Section */}
+      <div className="px-4 md:px-8 lg:px-16">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Meet Our Team
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 mt-4">
+            The passionate individuals behind Saan-hub Solutions
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {teamMembers.map((member, index) => (
+            <div
+              key={index}
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 transition-all duration-300 group">
+              <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src =
+                      "https://via.placeholder.com/400x400?text=Profile+Image";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+
+              <div className="p-4 sm:p-6">
+                <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-2">
+                  {member.name}
+                </h3>
+                <p className="text-blue-600 dark:text-blue-400 font-medium mb-3 sm:mb-4">
+                  {member.role}
+                </p>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 line-clamp-3">
+                  {member.bio}
+                </p>
+
+                <div className="flex space-x-4">
+                  <a
+                    href={member.social.linkedin || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                  <a
+                    href={member.social.github || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                    <Github className="w-5 h-5" />
+                  </a>
+                  <a
+                    href={member.social.email || "#"}
+                    className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition-colors">
+                    <Mail className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Company Leadership */}
