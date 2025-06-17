@@ -1,11 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { Code, Globe, Brain, Cog, ArrowRight } from "lucide-react";
+import {
+  Code,
+  Globe,
+  Brain,
+  Cog,
+  ArrowRight,
+  Cloud,
+  Sun,
+  CloudRain,
+  Wind,
+  Droplets,
+  Thermometer,
+  AlertCircle,
+} from "lucide-react";
 
 const HomePage = ({ setActivePage }) => {
   const [weatherData, setWeatherData] = useState(null);
   const [locationName, setLocationName] = useState("Loading...");
   const [loadingWeather, setLoadingWeather] = useState(true);
   const [weatherError, setWeatherError] = useState(null);
+  const [debugInfo, setDebugInfo] = useState(null);
 
   // Update document title
   useEffect(() => {
@@ -16,10 +30,15 @@ const HomePage = ({ setActivePage }) => {
 
   // Debug environment variable
   useEffect(() => {
-    console.log(
-      "OpenWeather API Key:",
-      OPEN_WEATHER_API_KEY ? "Present" : "Missing"
-    );
+    const hasGeolocation = "geolocation" in navigator;
+    const debugData = {
+      apiKey: OPEN_WEATHER_API_KEY ? "Present" : "Missing",
+      timestamp: new Date().toISOString(),
+      userAgent: navigator.userAgent,
+      geolocation: hasGeolocation ? "Supported" : "Not Supported",
+    };
+    console.log("Debug Info:", debugData);
+    setDebugInfo(debugData);
   }, []);
 
   useEffect(() => {
@@ -30,7 +49,7 @@ const HomePage = ({ setActivePage }) => {
         if (!OPEN_WEATHER_API_KEY) {
           console.error("Missing OpenWeather API Key");
           throw new Error(
-            "Weather service is not configured. Please contact support."
+            "Weather service is not configured. Please check your environment variables."
           );
         }
 
@@ -46,16 +65,26 @@ const HomePage = ({ setActivePage }) => {
             statusText: response.statusText,
             errorText: errorText,
           });
-          throw new Error(`Weather data unavailable (${response.status})`);
+          throw new Error(
+            `Weather data unavailable (${response.status}): ${errorText}`
+          );
         }
 
         const data = await response.json();
         console.log("Weather data received:", data);
+
+        if (!data || !data.main || !data.weather) {
+          throw new Error("Invalid weather data received from API");
+        }
+
         setWeatherData(data);
         setLocationName(`${data.name}, ${data.sys.country}`);
       } catch (error) {
         console.error("Error fetching weather data:", error);
-        setWeatherError(error.message || "Failed to fetch weather data");
+        setWeatherError(
+          error.message ||
+            "Failed to fetch weather data. Please try again later."
+        );
         setLocationName("N/A");
       } finally {
         setLoadingWeather(false);
@@ -71,13 +100,15 @@ const HomePage = ({ setActivePage }) => {
           },
           (error) => {
             console.error("Geolocation error:", error);
-            setWeatherError("Location access denied. Showing default weather.");
-            // Fallback to a default location (e.g., Sydney, Australia)
+            setWeatherError(
+              `Location access denied (${error.code}). Showing default weather.`
+            );
+            // Fallback to a default location (Sydney, Australia)
             fetchWeather(-33.8688, 151.2093);
           },
           {
             enableHighAccuracy: true,
-            timeout: 5000,
+            timeout: 10000,
             maximumAge: 0,
           }
         );
@@ -86,7 +117,7 @@ const HomePage = ({ setActivePage }) => {
         setWeatherError(
           "Location services not supported. Showing default weather."
         );
-        // Fallback to a default location (e.g., Sydney, Australia)
+        // Fallback to a default location (Sydney, Australia)
         fetchWeather(-33.8688, 151.2093);
       }
     };
@@ -120,6 +151,32 @@ const HomePage = ({ setActivePage }) => {
         "Transform your business operations with smart automation that eliminates repetitive tasks, reduces errors, and boosts productivity.",
     },
   ];
+
+  const getWeatherIcon = (weatherCode) => {
+    // Map weather codes to icons with different colors
+    if (weatherCode >= 200 && weatherCode < 300) {
+      return <CloudRain className="w-12 h-12 text-yellow-400" />; // Thunderstorm
+    }
+    if (weatherCode >= 300 && weatherCode < 400) {
+      return <CloudRain className="w-12 h-12 text-blue-400" />; // Drizzle
+    }
+    if (weatherCode >= 500 && weatherCode < 600) {
+      return <CloudRain className="w-12 h-12 text-blue-500" />; // Rain
+    }
+    if (weatherCode >= 600 && weatherCode < 700) {
+      return <CloudRain className="w-12 h-12 text-blue-300" />; // Snow
+    }
+    if (weatherCode >= 700 && weatherCode < 800) {
+      return <Cloud className="w-12 h-12 text-gray-400" />; // Atmosphere (fog, mist)
+    }
+    if (weatherCode === 800) {
+      return <Sun className="w-12 h-12 text-yellow-400" />; // Clear
+    }
+    if (weatherCode > 800) {
+      return <Cloud className="w-12 h-12 text-gray-300" />; // Clouds
+    }
+    return <Sun className="w-12 h-12 text-yellow-400" />; // Default
+  };
 
   return (
     <div className="space-y-16">
@@ -177,47 +234,137 @@ const HomePage = ({ setActivePage }) => {
         <div className="absolute inset-0 bg-pattern-light opacity-10" />
         <div className="relative">
           {loadingWeather ? (
-            <p className="text-center text-lg">Loading weather...</p>
+            <div className="flex items-center justify-center space-x-2">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white" />
+              <p className="text-lg">Loading weather...</p>
+            </div>
           ) : weatherError ? (
-            <p className="text-center text-red-300 text-lg">{weatherError}</p>
-          ) : weatherData ? (
-            <div className="flex flex-col sm:flex-row justify-between items-center">
-              <div>
-                <h3 className="text-3xl font-semibold mb-2">{locationName}</h3>
-                <p className="text-sm opacity-90">
-                  {new Date(weatherData.dt * 1000).toLocaleDateString()} •{" "}
-                  {new Date(weatherData.dt * 1000).toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
-                </p>
+            <div className="text-center p-4 bg-red-500/20 rounded-lg">
+              <div className="flex items-center justify-center space-x-2 mb-2">
+                <AlertCircle className="w-6 h-6 text-red-200" />
+                <p className="text-red-200 text-lg">{weatherError}</p>
               </div>
-              <div className="text-center sm:text-right mt-4 sm:mt-0">
-                <div className="text-6xl font-bold">
-                  {Math.round(weatherData.main.temp)}°C
+              {debugInfo && (
+                <div className="text-xs text-red-200/80 mt-2">
+                  <p>Debug Info: API Key - {debugInfo.apiKey}</p>
+                  <p>Geolocation - {debugInfo.geolocation}</p>
                 </div>
-                <p className="text-lg mt-1">
-                  {weatherData.weather[0].description}
+              )}
+            </div>
+          ) : weatherData ? (
+            <div className="space-y-6">
+              <div className="flex flex-col sm:flex-row justify-between items-center">
+                <div>
+                  <h3 className="text-3xl font-semibold mb-2">
+                    {locationName}
+                  </h3>
+                  <p className="text-sm opacity-90">
+                    {new Date(weatherData.dt * 1000).toLocaleDateString(
+                      undefined,
+                      {
+                        weekday: "long",
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      }
+                    )}{" "}
+                    •{" "}
+                    {new Date(weatherData.dt * 1000).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </p>
+                </div>
+                <div className="text-center sm:text-right mt-4 sm:mt-0">
+                  <div className="flex items-center justify-center sm:justify-end space-x-2">
+                    {getWeatherIcon(weatherData.weather[0].id)}
+                    <div>
+                      <div className="text-6xl font-bold">
+                        {Math.round(weatherData.main.temp)}°C
+                      </div>
+                      <p className="text-lg mt-1 capitalize">
+                        {weatherData.weather[0].description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                <div className="flex items-center space-x-2 hover:bg-white/5 p-2 rounded-lg transition-colors">
+                  <Wind className="w-5 h-5 text-blue-200" />
+                  <div>
+                    <p className="text-sm opacity-80">Wind</p>
+                    <p className="font-semibold">
+                      {weatherData.wind.speed} km/h
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2 hover:bg-white/5 p-2 rounded-lg transition-colors">
+                  <Droplets className="w-5 h-5 text-blue-200" />
+                  <div>
+                    <p className="text-sm opacity-80">Humidity</p>
+                    <p className="font-semibold">
+                      {weatherData.main.humidity}%
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2 hover:bg-white/5 p-2 rounded-lg transition-colors">
+                  <Thermometer className="w-5 h-5 text-blue-200" />
+                  <div>
+                    <p className="text-sm opacity-80">Feels Like</p>
+                    <p className="font-semibold">
+                      {Math.round(weatherData.main.feels_like)}°C
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2 hover:bg-white/5 p-2 rounded-lg transition-colors">
+                  <Cloud className="w-5 h-5 text-blue-200" />
+                  <div>
+                    <p className="text-sm opacity-80">Pressure</p>
+                    <p className="font-semibold">
+                      {weatherData.main.pressure} hPa
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                <div className="flex items-center space-x-2 hover:bg-white/5 p-2 rounded-lg transition-colors">
+                  <div>
+                    <p className="text-sm opacity-80">Min Temp</p>
+                    <p className="font-semibold">
+                      {Math.round(weatherData.main.temp_min)}°C
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2 hover:bg-white/5 p-2 rounded-lg transition-colors">
+                  <div>
+                    <p className="text-sm opacity-80">Max Temp</p>
+                    <p className="font-semibold">
+                      {Math.round(weatherData.main.temp_max)}°C
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2 hover:bg-white/5 p-2 rounded-lg transition-colors">
+                  <div>
+                    <p className="text-sm opacity-80">Visibility</p>
+                    <p className="font-semibold">
+                      {(weatherData.visibility / 1000).toFixed(1)} km
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-sm text-center opacity-80 bg-white/5 p-3 rounded-lg">
+                <p>
+                  UV Index: N/A (OpenWeatherMap free tier does not provide UV
+                  index directly)
                 </p>
               </div>
             </div>
           ) : (
             <p className="text-center text-lg">Weather data not available.</p>
-          )}
-
-          {weatherData && (
-            <div className="flex flex-wrap justify-between mt-6 text-sm bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-              <span className="mb-2 sm:mb-0">
-                Wind: {weatherData.wind.speed} km/h
-              </span>
-              <span className="mb-2 sm:mb-0">
-                Humidity: {weatherData.main.humidity}%
-              </span>
-              <span>
-                UV Index: N/A (OpenWeatherMap free tier does not provide UV
-                index directly)
-              </span>
-            </div>
           )}
         </div>
       </div>
