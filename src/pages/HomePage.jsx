@@ -12,33 +12,34 @@ const HomePage = ({ setActivePage }) => {
     document.title = "Home | Saan-hub Solutions";
   }, []);
 
-  // Replace with your OpenWeatherMap API key
-  const OPEN_WEATHER_API_KEY = "23ab5274706146b1bc392026251306";
+  const OPEN_WEATHER_API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
   useEffect(() => {
     const fetchWeather = async (lat, lon) => {
       setLoadingWeather(true);
       setWeatherError(null);
       try {
+        if (!OPEN_WEATHER_API_KEY) {
+          throw new Error("OpenWeather API key is not configured");
+        }
+
         const response = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_API_KEY}&units=metric`
         );
+
         if (!response.ok) {
           const errorText = await response.text();
           console.error("OpenWeatherMap API Error Response:", errorText);
-          throw new Error(
-            `HTTP error! status: ${response.status} - ${
-              response.statusText || "Unknown error"
-            }`
-          );
+          throw new Error(`Weather data unavailable (${response.status})`);
         }
+
         const data = await response.json();
         setWeatherData(data);
         setLocationName(`${data.name}, ${data.sys.country}`);
       } catch (error) {
         console.error("Error fetching weather data:", error);
-        setWeatherError("Failed to fetch weather data.");
-        setLocationName("N/A"); // Fallback for location display
+        setWeatherError(error.message || "Failed to fetch weather data");
+        setLocationName("N/A");
       } finally {
         setLoadingWeather(false);
       }
@@ -52,19 +53,22 @@ const HomePage = ({ setActivePage }) => {
           },
           (error) => {
             console.error("Geolocation error:", error);
-            setWeatherError(
-              "Geolocation denied or unavailable. Showing default weather."
-            );
-            // Fallback to a default location (e.g., Cardiff, Australia)
+            setWeatherError("Location access denied. Showing default weather.");
+            // Fallback to a default location (e.g., Sydney, Australia)
             fetchWeather(-33.8688, 151.2093);
+          },
+          {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0,
           }
         );
       } else {
-        console.log(
-          "Geolocation not supported by this browser. Showing default weather."
+        console.log("Geolocation not supported");
+        setWeatherError(
+          "Location services not supported. Showing default weather."
         );
-        setWeatherError("Geolocation not supported. Showing default weather.");
-        // Fallback to a default location (e.g., Cardiff, Australia)
+        // Fallback to a default location (e.g., Sydney, Australia)
         fetchWeather(-33.8688, 151.2093);
       }
     };
