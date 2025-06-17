@@ -14,26 +14,43 @@ const HomePage = ({ setActivePage }) => {
 
   const OPEN_WEATHER_API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
+  // Debug environment variable
+  useEffect(() => {
+    console.log(
+      "OpenWeather API Key:",
+      OPEN_WEATHER_API_KEY ? "Present" : "Missing"
+    );
+  }, []);
+
   useEffect(() => {
     const fetchWeather = async (lat, lon) => {
       setLoadingWeather(true);
       setWeatherError(null);
       try {
         if (!OPEN_WEATHER_API_KEY) {
-          throw new Error("OpenWeather API key is not configured");
+          console.error("Missing OpenWeather API Key");
+          throw new Error(
+            "Weather service is not configured. Please contact support."
+          );
         }
 
-        const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_API_KEY}&units=metric`
-        );
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_API_KEY}&units=metric`;
+        console.log("Fetching weather from:", url);
+
+        const response = await fetch(url);
 
         if (!response.ok) {
           const errorText = await response.text();
-          console.error("OpenWeatherMap API Error Response:", errorText);
+          console.error("OpenWeatherMap API Error Response:", {
+            status: response.status,
+            statusText: response.statusText,
+            errorText: errorText,
+          });
           throw new Error(`Weather data unavailable (${response.status})`);
         }
 
         const data = await response.json();
+        console.log("Weather data received:", data);
         setWeatherData(data);
         setLocationName(`${data.name}, ${data.sys.country}`);
       } catch (error) {
@@ -49,6 +66,7 @@ const HomePage = ({ setActivePage }) => {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           (position) => {
+            console.log("Got location:", position.coords);
             fetchWeather(position.coords.latitude, position.coords.longitude);
           },
           (error) => {
