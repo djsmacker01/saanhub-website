@@ -189,12 +189,9 @@ const HomePage = ({ setActivePage }) => {
           </h1>
           <p className="text-xl text-gray-800 dark:text-gray-200 max-w-4xl mx-auto mb-12 leading-loose text-justify">
             Saan-hub Solutions is a Cardiff-based company delivering full-cycle
-            software development services that drive digital transformation. Our
+            software development services that drives digital transformation. Our
             team combines deep technical skills with industry knowledge to build
-            smart, scalable solutions. We also offer mechanical engineering
-            expertise, including CAD/CAM, robotics, testing, and
-            automation—bridging the gap between software and engineering
-            innovation.
+            smart and scalable solutions.
           </p>
           <button
             onClick={() => setActivePage("services")}
