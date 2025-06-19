@@ -21,7 +21,6 @@ const PrivacyPolicy = () => {
         {/* Introduction */}
         <section className="space-y-4 animate-fade-in-up">
           <div className="flex items-center gap-3 group">
-            <Shield className="w-6 h-6 text-blue-500 transform group-hover:scale-125 group-hover:-translate-y-1 transition-transform duration-300 animate-bounce-subtle" />
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
               Introduction
             </h2>
@@ -37,7 +36,6 @@ const PrivacyPolicy = () => {
         {/* Information We Collect */}
         <section className="space-y-4 animate-fade-in-up">
           <div className="flex items-center gap-3 group">
-            <Database className="w-6 h-6 text-blue-500 transform group-hover:scale-125 group-hover:-translate-y-1 transition-transform duration-300 animate-bounce-subtle" />
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
               Information We Collect
             </h2>
@@ -71,7 +69,6 @@ const PrivacyPolicy = () => {
         {/* How We Use Your Information */}
         <section className="space-y-4 animate-fade-in-up">
           <div className="flex items-center gap-3 group">
-            <Eye className="w-6 h-6 text-blue-500 transform group-hover:scale-125 group-hover:-translate-y-1 transition-transform duration-300 animate-bounce-subtle" />
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
               How We Use Your Information
             </h2>
@@ -89,7 +86,6 @@ const PrivacyPolicy = () => {
         {/* Data Security */}
         <section className="space-y-4 animate-fade-in-up">
           <div className="flex items-center gap-3 group">
-            <Lock className="w-6 h-6 text-blue-500 transform group-hover:scale-125 group-hover:-translate-y-1 transition-transform duration-300 animate-bounce-subtle" />
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
               Data Security
             </h2>
@@ -112,7 +108,6 @@ const PrivacyPolicy = () => {
         {/* Data Sharing */}
         <section className="space-y-4 animate-fade-in-up">
           <div className="flex items-center gap-3 group">
-            <Server className="w-6 h-6 text-blue-500 transform group-hover:scale-125 group-hover:-translate-y-1 transition-transform duration-300 animate-bounce-subtle" />
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
               Data Sharing
             </h2>
@@ -130,7 +125,6 @@ const PrivacyPolicy = () => {
         {/* Your Rights */}
         <section className="space-y-4 animate-fade-in-up">
           <div className="flex items-center gap-3 group">
-            <FileText className="w-6 h-6 text-blue-500 transform group-hover:scale-125 group-hover:-translate-y-1 transition-transform duration-300 animate-bounce-subtle" />
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
               Your Rights
             </h2>

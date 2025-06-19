@@ -202,21 +202,36 @@ const AboutPage = () => {
 
                 <div className="flex space-x-4">
                   <a
-                    href={member.social.linkedin || "#"}
+                    href={
+                      member.social?.linkedin &&
+                      member.social.linkedin.startsWith("http")
+                        ? member.social.linkedin
+                        : "#"
+                    }
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a
-                    href={member.social.github || "#"}
+                    href={
+                      member.social?.github &&
+                      member.social.github.startsWith("http")
+                        ? member.social.github
+                        : "#"
+                    }
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                     <Github className="w-5 h-5" />
                   </a>
                   <a
-                    href={member.social.email || "#"}
+                    href={
+                      member.social?.email &&
+                      member.social.email.startsWith("mailto:")
+                        ? member.social.email
+                        : "#"
+                    }
                     className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition-colors">
                     <Mail className="w-5 h-5" />
                   </a>
@@ -230,9 +245,6 @@ const AboutPage = () => {
       {/* Company Leadership */}
       <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg group transform transition-all duration-300 hover:shadow-xl px-4 md:px-8 lg:px-16">
         <div className="flex items-center mb-6">
-          <div className="transform group-hover:scale-125 group-hover:-translate-y-1 transition-transform duration-300 bg-red-50 dark:bg-red-900/30 p-3 rounded-xl">
-            <Users className="w-6 h-6 text-red-500" />
-          </div>
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white ml-4">
             Company Leadership
           </h3>

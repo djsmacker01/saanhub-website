@@ -59,31 +59,26 @@ const ServicesPage = ({ setActivePage }) => {
         "Tired of being invisible online? Let's get your business to the top of Google searches. We use proven strategies to help your customers find you when they're looking for services like yours.",
     },
     {
-      icon: <Server className="w-12 h-12 text-blue-400 mb-4" />,
       title: "Web Hosting",
       description:
         "Don't let slow hosting hold you back. Our reliable hosting solutions keep your website fast, secure, and always online. We handle the technical stuff so you can focus on your business.",
     },
     {
-      icon: <Wrench className="w-12 h-12 text-yellow-500 mb-4" />,
       title: "Website Maintenance",
       description:
         "Think of us as your website's personal care team. We keep everything running smoothly with regular updates, security checks, and performance tuning. No technical headaches - we handle it all.",
     },
     {
-      icon: <TestTube2 className="w-12 h-12 text-red-500 mb-4" />,
       title: "Mechanical Testing",
       description:
         "Comprehensive mechanical testing services including stress analysis, fatigue testing, material characterization, and quality control. Our state-of-the-art testing facilities ensure your products meet the highest industry standards.",
     },
     {
-      icon: <Bot className="w-12 h-12 text-indigo-500 mb-4" />,
       title: "Automation & Robotics",
       description:
         "Cutting-edge automation and robotics solutions for manufacturing and industrial processes. From robotic assembly lines to automated quality control systems, we help you increase efficiency and precision in your operations.",
     },
     {
-      icon: <DraftingCompass className="w-12 h-12 text-teal-500 mb-4" />,
       title: "CAD/CAM Services",
       description:
         "Professional CAD/CAM services for mechanical design and manufacturing. We provide 3D modeling, simulation, CNC programming, and rapid prototyping to bring your mechanical designs to life with precision and efficiency.",
