@@ -185,7 +185,7 @@ const HomePage = ({ setActivePage }) => {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 opacity-50 animate-bg-pan" />
         <div className="relative text-center">
           <h1 className="text-6xl font-extrabold mb-8 bg-gradient-to-r from-blue-700 to-purple-600 bg-clip-text text-transparent animate-fade-in animate-scale-in">
-            Website development with SEO and AI Integration 
+            Website Development with SEO and AI Integration 
           </h1>
           <p className="text-xl text-gray-800 dark:text-gray-200 max-w-4xl mx-auto mb-12 leading-loose text-justify">
             Saan-hub Solutions is a Cardiff-based company delivering full-cycle
