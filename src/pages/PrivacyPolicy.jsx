@@ -153,7 +153,7 @@ const PrivacyPolicy = () => {
           </p>
           <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
             <p className="text-gray-600 dark:text-gray-300">
-              Email: info@saan-hub.com.au
+              Email: adedeji.adewale2022@gmail.com
             </p>
             <p className="text-gray-600 dark:text-gray-300">
               Address: Cardiff, United Kingdom
