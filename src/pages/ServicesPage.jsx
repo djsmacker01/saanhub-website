@@ -81,9 +81,7 @@ const ServicesPage = ({ setActivePage }) => {
   return (
     <div className="space-y-8 px-4 py-8 md:px-8 lg:px-16">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4 text-gray-900">
-          Our Services
-        </h1>
+        <h1 className="text-4xl font-bold mb-4 text-gray-900">Our Services</h1>
         <p className="text-xl text-gray-900 dark:text-gray-200 max-w-4xl mx-auto">
           At Saan-hub Solutions, we deliver comprehensive software development
           services and solutions that drive digital transformation. Based in
@@ -136,9 +134,7 @@ const ServicesPage = ({ setActivePage }) => {
             <div
               key={index}
               className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <div className="mb-4">
-                {service.icon}
-              </div>
+              <div className="mb-4">{service.icon}</div>
               <h3 className="text-lg font-semibold mb-3 text-gray-900">
                 {service.title}
               </h3>
