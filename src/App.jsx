@@ -49,7 +49,7 @@ const App = () => {
 
   return (
     <div className={`min-h-screen ${isDarkMode ? "dark" : ""}`}>
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         <Sidebar
           activePage={activePage}
           setActivePage={setActivePage}
@@ -57,13 +57,13 @@ const App = () => {
           setIsDarkMode={setIsDarkMode}
         />
 
-        <div className="flex-1 ml-64">
+        <div className="flex-1 lg:ml-72">
           <Header isDarkMode={isDarkMode} />
 
           <main
             className={`${
               isDarkMode ? "bg-gray-900" : "bg-gray-50"
-            } min-h-screen p-8`}>
+            } min-h-screen p-4 sm:p-6 lg:p-8`}>
             {renderPage()}
           </main>
 
