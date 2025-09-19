@@ -85,15 +85,15 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="space-y-12 py-8">
+    <div className="space-y-8 sm:space-y-12 py-4 sm:py-6 lg:py-8">
       {/* Hero Section */}
-      <div className="text-center mb-16 relative">
+      <div className="text-center mb-8 sm:mb-12 lg:mb-16 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl transform -skew-y-6" />
         <div className="relative">
-          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-fade-in">
             About Saan-hub Solutions
           </h1>
-          <p className="text-xl text-gray-800 dark:text-gray-200 text-justify leading-relaxed px-4 md:px-8 lg:px-16">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-800 dark:text-gray-200 text-justify leading-relaxed px-4 md:px-8 lg:px-16">
             Saan-hub Solutions is a recognized software development company
             based in Cardiff, United Kingdom, specializing in smart digital
             solutions that enhance business growth, automation, and operational
@@ -135,11 +135,11 @@ const AboutPage = () => {
       </div>
 
       {/* Mission, Vision, Strengths, Innovation Grid */}
-      <div className="grid md:grid-cols-2 gap-8 px-4 md:px-8 lg:px-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 px-4 md:px-8 lg:px-16">
         {sections.map((section, index) => (
           <div
             key={index}
-            className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group cursor-pointer">
+            className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group cursor-pointer">
             <div
               className={`transform group-hover:scale-125 group-hover:-translate-y-1 transition-transform duration-300 bg-${section.color}-50 dark:bg-${section.color}-900/30 p-3 rounded-xl`}>
               {section.icon}
