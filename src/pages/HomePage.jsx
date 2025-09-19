@@ -179,15 +179,15 @@ const HomePage = ({ setActivePage }) => {
   };
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-8 sm:space-y-12 lg:space-y-16">
       {/* Hero Section */}
-      <div className="relative overflow-hidden py-24 px-4 md:px-8 lg:px-16">
+      <div className="relative overflow-hidden py-12 sm:py-16 lg:py-24 px-4 md:px-8 lg:px-16">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 opacity-50 animate-bg-pan" />
         <div className="relative text-center">
-          <h1 className="text-6xl font-extrabold mb-8 bg-gradient-to-r from-blue-700 to-purple-600 bg-clip-text text-transparent animate-fade-in animate-scale-in">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 sm:mb-8 bg-gradient-to-r from-blue-700 to-purple-600 bg-clip-text text-transparent animate-fade-in animate-scale-in">
             Website Development with SEO and AI Integration 
           </h1>
-          <p className="text-xl text-gray-800 dark:text-gray-200 max-w-4xl mx-auto mb-12 leading-loose text-justify">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-800 dark:text-gray-200 max-w-4xl mx-auto mb-8 sm:mb-12 leading-relaxed text-justify px-4">
             Saan-hub Solutions is a Cardiff-based company delivering full-cycle
             software development services that drives digital transformation. Our
             team combines deep technical skills with industry knowledge to build
@@ -208,11 +208,11 @@ const HomePage = ({ setActivePage }) => {
       </div>
 
       {/* Featured Services */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:px-8 lg:px-16 animate-fade-in-up">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 px-4 md:px-8 lg:px-16 animate-fade-in-up">
         {featuredServices.map((service, index) => (
           <div
             key={index}
-            className="group bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 border border-gray-100 dark:border-gray-700 hover:shadow-inner">
+            className="group bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 border border-gray-100 dark:border-gray-700 hover:shadow-inner">
             <div className="mb-6 transform group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-300 animate-bounce-subtle">
               {service.icon}
             </div>
