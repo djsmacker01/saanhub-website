@@ -100,13 +100,13 @@ const ContactPage = () => {
 
   return (
     <div className="w-full">
-      <div className="relative overflow-hidden mb-12 py-16 px-4 md:px-8 lg:px-16">
+      <div className="relative overflow-hidden mb-8 sm:mb-10 lg:mb-12 py-8 sm:py-12 lg:py-16 px-4 md:px-8 lg:px-16">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 opacity-50 animate-bg-pan" />
         <div className="relative text-center">
-          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-fade-in animate-scale-in">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-fade-in animate-scale-in">
             Get in Touch
           </h1>
-          <p className="text-xl text-gray-800 dark:text-gray-200 leading-relaxed mx-auto px-4 md:px-8 lg:px-16">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-800 dark:text-gray-200 leading-relaxed mx-auto px-4 md:px-8 lg:px-16">
             Have a question or want to work together? We'd love to hear from
             you. Fill out the form below and we'll get back to you as soon as
             possible.
@@ -114,7 +114,7 @@ const ContactPage = () => {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 mb-12 px-4 md:px-8 lg:px-16 animate-fade-in-up">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-8 sm:mb-10 lg:mb-12 px-4 md:px-8 lg:px-16 animate-fade-in-up">
         <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">
           <Mail className="w-8 h-8 text-blue-500 mx-auto mb-4 transform group-hover:scale-110 transition-transform" />
           <h3 className="text-lg font-semibold mb-2">Email Us</h3>
