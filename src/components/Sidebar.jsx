@@ -14,14 +14,14 @@ const Sidebar = ({ activePage, setActivePage, isDarkMode, setIsDarkMode }) => {
   ];
 
   return (
-    <div className="w-64 bg-gradient-to-b from-slate-800 to-slate-900 text-white min-h-screen fixed left-0 top-0 z-50 transform -translate-x-full animate-slide-in-left">
+    <div className="w-full lg:w-72 bg-gradient-to-b from-slate-800 to-slate-900 text-white min-h-screen lg:fixed lg:left-0 lg:top-0 z-50">
       <div className="p-6">
         {/* Logo */}
-        <div className="mb-8 flex px-4">
+        <div className="mb-8 flex px-4 justify-center lg:justify-start">
           <img
             src="/log1.png"
             alt="Saan-hub Solutions Logo"
-            className="h-24 w-auto"
+            className="h-16 sm:h-20 lg:h-24 w-auto"
           />
         </div>
 
@@ -85,20 +85,36 @@ const Sidebar = ({ activePage, setActivePage, isDarkMode, setIsDarkMode }) => {
                     }`}>
                     SubletMatch
                   </button>
-                  <button
-                    onClick={() => setActivePage("fare-tracker")}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        setActivePage("fare-tracker");
-                      }
-                    }}
-                    className={`w-full text-left px-4 py-2 rounded-lg transition-colors duration-200 transform hover:scale-105 hover:translate-x-1 shadow-md hover:shadow-lg ${
-                      activePage === "fare-tracker"
-                        ? "bg-blue-600 text-white shadow-xl"
-                        : "text-gray-100 hover:bg-slate-600 hover:text-white"
-                    }`}>
-                    Fare-Tracker
-                  </button>
+                  <a
+                    href="https://faretracker.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full text-left px-4 py-2 rounded-lg transition-colors duration-200 transform hover:scale-105 hover:translate-x-1 shadow-md hover:shadow-lg text-gray-100 hover:bg-slate-600 hover:text-white flex items-center">
+                    <span className="flex-1">Fare-Tracker</span>
+                    <svg className="w-3 h-3 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://cymruunleashed.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full text-left px-4 py-2 rounded-lg transition-colors duration-200 transform hover:scale-105 hover:translate-x-1 shadow-md hover:shadow-lg text-gray-100 hover:bg-slate-600 hover:text-white flex items-center">
+                    <span className="flex-1">Cymru Unleashed</span>
+                    <svg className="w-3 h-3 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://haileyhotel.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full text-left px-4 py-2 rounded-lg transition-colors duration-200 transform hover:scale-105 hover:translate-x-1 shadow-md hover:shadow-lg text-gray-100 hover:bg-slate-600 hover:text-white flex items-center">
+                    <span className="flex-1">Hailey's Hotel</span>
+                    <svg className="w-3 h-3 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
                 </div>
               )}
             </React.Fragment>
@@ -106,7 +122,7 @@ const Sidebar = ({ activePage, setActivePage, isDarkMode, setIsDarkMode }) => {
         </nav>
 
         {/* Dark Mode Toggle */}
-        <div className="absolute bottom-6 left-6">
+        <div className="mt-8 lg:absolute lg:bottom-6 lg:left-6 flex justify-center lg:justify-start">
           <div className="flex items-center space-x-2">
             <span className="text-sm text-gray-100">Light Mode</span>
             <button
