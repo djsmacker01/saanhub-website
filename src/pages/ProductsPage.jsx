@@ -7,6 +7,7 @@ import {
   Shield,
   Zap,
   Users,
+  Code,
 } from "lucide-react";
 
 const ProductsPage = ({ activePage, setActivePage }) => {
@@ -137,6 +138,23 @@ const ProductsPage = ({ activePage, setActivePage }) => {
               </span>
             ))}
           </div>
+
+          {/* Tech Stack */}
+          <div className="mb-6">
+            <div className="flex items-center mb-3">
+              <Code className="w-4 h-4 text-blue-600 dark:text-blue-400 mr-2" />
+              <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">Tech Stack</span>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {['Angular', 'Node.js', 'Supabase', 'Express', 'Tailwind CSS'].map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-2 py-1 text-xs bg-blue-100 dark:bg-blue-800/50 text-blue-800 dark:text-blue-200 rounded-md border border-blue-200 dark:border-blue-700/50">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
             
             <button className="group w-full flex items-center justify-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold transition-all duration-300 py-3 px-4 rounded-xl border border-blue-200 dark:border-blue-700/50 hover:bg-blue-50 dark:hover:bg-blue-900/30">
             Learn More
@@ -182,6 +200,23 @@ const ProductsPage = ({ activePage, setActivePage }) => {
                 <span className="ml-2">{feature.text}</span>
               </span>
             ))}
+          </div>
+
+          {/* Tech Stack */}
+          <div className="mb-6">
+            <div className="flex items-center mb-3">
+              <Code className="w-4 h-4 text-green-600 dark:text-green-400 mr-2" />
+              <span className="text-sm font-semibold text-green-600 dark:text-green-400">Tech Stack</span>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {['React', 'JavaScript', 'CSS3', 'HTML5', 'Netlify'].map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-2 py-1 text-xs bg-green-100 dark:bg-green-800/50 text-green-800 dark:text-green-200 rounded-md border border-green-200 dark:border-green-700/50">
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
             
             <a 
@@ -239,6 +274,23 @@ const ProductsPage = ({ activePage, setActivePage }) => {
                 <span className="ml-2">Digital Innovation</span>
               </span>
             </div>
+
+            {/* Tech Stack */}
+            <div className="mb-6">
+              <div className="flex items-center mb-3">
+                <Code className="w-4 h-4 text-red-600 dark:text-red-400 mr-2" />
+                <span className="text-sm font-semibold text-red-600 dark:text-red-400">Tech Stack</span>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {['React', 'Next.js', 'Tailwind CSS', 'Vercel', 'TypeScript'].map((tech, index) => (
+                  <span
+                    key={index}
+                    className="px-2 py-1 text-xs bg-red-100 dark:bg-red-800/50 text-red-800 dark:text-red-200 rounded-md border border-red-200 dark:border-red-700/50">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
             
             <a 
               href="https://cymruunleashed.com/" 
@@ -293,6 +345,23 @@ const ProductsPage = ({ activePage, setActivePage }) => {
                 <span className="ml-2">Online Reservations</span>
               </span>
             </div>
+
+            {/* Tech Stack */}
+            <div className="mb-6">
+              <div className="flex items-center mb-3">
+                <Code className="w-4 h-4 text-purple-600 dark:text-purple-400 mr-2" />
+                <span className="text-sm font-semibold text-purple-600 dark:text-purple-400">Tech Stack</span>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {['React', 'JavaScript', 'CSS3', 'HTML5', 'Netlify'].map((tech, index) => (
+                  <span
+                    key={index}
+                    className="px-2 py-1 text-xs bg-purple-100 dark:bg-purple-800/50 text-purple-800 dark:text-purple-200 rounded-md border border-purple-200 dark:border-purple-700/50">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
             
             <a 
               href="https://haileyhotel.netlify.app/" 
@@ -346,6 +415,23 @@ const ProductsPage = ({ activePage, setActivePage }) => {
                 <Users className="w-4 h-4" />
                 <span className="ml-2">Team Collaboration</span>
               </span>
+            </div>
+
+            {/* Tech Stack */}
+            <div className="mb-6">
+              <div className="flex items-center mb-3">
+                <Code className="w-4 h-4 text-orange-600 dark:text-orange-400 mr-2" />
+                <span className="text-sm font-semibold text-orange-600 dark:text-orange-400">Tech Stack</span>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {['React', 'Node.js', 'Supabase', 'Express', 'Tailwind CSS'].map((tech, index) => (
+                  <span
+                    key={index}
+                    className="px-2 py-1 text-xs bg-orange-100 dark:bg-orange-800/50 text-orange-800 dark:text-orange-200 rounded-md border border-orange-200 dark:border-orange-700/50">
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
             
             <a 
