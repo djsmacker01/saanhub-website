@@ -106,6 +106,15 @@ const Footer = ({ setActivePage }) => {
                   Hailey's Hotel
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://trackgoal.online/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-400 transition-colors text-left w-full block">
+                  TrackGoal
+                </a>
+              </li>
             </ul>
           </div>
 

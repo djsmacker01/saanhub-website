@@ -304,6 +304,60 @@ const ProductsPage = ({ activePage, setActivePage }) => {
             </a>
           </div>
         </div>
+
+        {/* TrackGoal Card */}
+        <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-3xl shadow-lg border border-orange-100 dark:border-orange-800/30 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group hover:-translate-y-2 hover:border-orange-200 dark:hover:border-orange-700 h-full flex flex-col relative overflow-hidden">
+          {/* Background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-transparent dark:from-orange-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          
+          <div className="relative z-10">
+            <div className="flex items-center justify-between mb-6 min-w-0">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-600 dark:text-orange-400 mr-3">
+                TrackGoal
+              </h3>
+              <div className="flex space-x-0.5 flex-shrink-0">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-400 fill-current"
+                  />
+                ))}
+              </div>
+            </div>
+            
+            <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed flex-grow text-sm sm:text-base">
+              A powerful goal tracking and productivity platform developed by{" "}
+              <span className="text-orange-600 dark:text-orange-400 font-semibold">
+                Saan-hub Solutions
+              </span>
+              . Features goal setting, progress tracking, milestone management, and analytics to help individuals and teams achieve their objectives efficiently.
+            </p>
+            
+            <div className="flex flex-wrap gap-2 mb-6">
+              <span className="inline-flex items-center px-3 py-2 rounded-full text-xs sm:text-sm bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-700/50">
+                <Shield className="w-4 h-4" />
+                <span className="ml-2">Goal Tracking</span>
+              </span>
+              <span className="inline-flex items-center px-3 py-2 rounded-full text-xs sm:text-sm bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-700/50">
+                <Zap className="w-4 h-4" />
+                <span className="ml-2">Progress Analytics</span>
+              </span>
+              <span className="inline-flex items-center px-3 py-2 rounded-full text-xs sm:text-sm bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-700/50">
+                <Users className="w-4 h-4" />
+                <span className="ml-2">Team Collaboration</span>
+              </span>
+            </div>
+            
+            <a 
+              href="https://trackgoal.online/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group w-full flex items-center justify-center text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 font-semibold transition-all duration-300 py-3 px-4 rounded-xl border border-orange-200 dark:border-orange-700/50 hover:bg-orange-50 dark:hover:bg-orange-900/30">
+              Visit Website
+              <ExternalLink className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* Global Reach Section */}
