@@ -85,7 +85,7 @@ const HomePage = ({ setActivePage }) => {
   const testimonials = [
     {
       name: "Client Testimonial",
-      company: "Business Name",
+      company: "Safe Online Space Cymru",
       role: "CEO",
       content:
         "Saan-hub Solutions transformed our operations with their custom software solution. The team understood our needs and delivered beyond expectations.",
@@ -93,7 +93,7 @@ const HomePage = ({ setActivePage }) => {
     },
     {
       name: "Client Testimonial",
-      company: "Business Name",
+      company: "OTID ENTERTAINMENT",
       role: "CTO",
       content:
         "Their digital transformation consulting helped us modernize our tech stack and improve efficiency by 40%. Highly recommended!",
@@ -101,7 +101,7 @@ const HomePage = ({ setActivePage }) => {
     },
     {
       name: "Client Testimonial",
-      company: "Business Name",
+      company: "SmartMealSaver",
       role: "Founder",
       content:
         "From MVP to full product launch, Saan-hub Solutions guided us every step of the way. Professional, reliable, and results-driven.",
