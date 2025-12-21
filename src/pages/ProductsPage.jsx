@@ -83,9 +83,9 @@ const ProductsPage = ({ activePage, setActivePage }) => {
   }
 
   return (
-    <div className="space-y-8 sm:space-y-12 py-4 sm:py-6 lg:py-8 px-4 md:px-8 lg:px-16">
+    <div className="space-y-16 sm:space-y-20 px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
       {/* Hero Section */}
-      <div className="text-center mb-8 sm:mb-12 lg:mb-16 relative px-4 md:px-8 lg:px-16">
+      <div className="text-center mb-12 sm:mb-16 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl transform -skew-y-6" />
         <div className="relative">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-white animate-fade-in">
@@ -447,7 +447,7 @@ const ProductsPage = ({ activePage, setActivePage }) => {
       </div>
 
       {/* Global Reach Section */}
-      <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-12 rounded-3xl relative overflow-hidden px-4 md:px-8 lg:px-16 animate-fade-in-up">
+      <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-12 sm:p-16 rounded-3xl relative overflow-hidden animate-fade-in-up">
         <div className="absolute inset-0 bg-grid-white/10" />
         <div className="relative flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex-1">
@@ -470,7 +470,7 @@ const ProductsPage = ({ activePage, setActivePage }) => {
       </div>
 
       {/* Company Overview */}
-      <div className="bg-gradient-to-r from-gray-100 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-12 rounded-3xl px-4 md:px-8 lg:px-16 animate-fade-in-up">
+      <div className="bg-gradient-to-r from-gray-100 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-12 sm:p-16 rounded-3xl animate-fade-in-up">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <p className="text-xl text-gray-900 dark:text-gray-200 leading-relaxed">
             <span className="text-blue-600 font-semibold">
@@ -512,7 +512,7 @@ const ProductsPage = ({ activePage, setActivePage }) => {
       </div>
 
       {/* Call to Action */}
-      <div className="bg-gradient-to-r from-gray-900 to-blue-900 text-white p-12 rounded-3xl px-4 md:px-8 lg:px-16 animate-fade-in-up">
+      <div className="bg-gradient-to-r from-gray-900 to-blue-900 text-white p-12 sm:p-16 rounded-3xl animate-fade-in-up">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h3 className="text-3xl font-bold mb-6">
