@@ -1,162 +1,305 @@
 import React, { useEffect } from "react";
 import {
   Code,
-  Globe,
   Brain,
+  Rocket,
   Cog,
-  ShoppingCart,
-  BarChart3,
-  Server,
-  Wrench,
-  TestTube2,
-  Bot,
-  DraftingCompass,
+  ArrowRight,
+  CheckCircle,
+  Users,
+  Shield,
+  Zap,
+  Globe,
 } from "lucide-react";
 
 const ServicesPage = ({ setActivePage }) => {
-  console.log("ServicesPage component is rendering"); // Debug log
-
   useEffect(() => {
-    console.log("ServicesPage useEffect running"); // Debug log
     document.title = "Services | Saan-hub Solutions";
   }, []);
 
-  const additionalServices = [
+  const coreServices = [
     {
-      icon: <Brain className="w-12 h-12 text-purple-500 mb-4" />,
-      title: "AI Integration",
+      icon: <Code className="w-16 h-16 text-blue-500" />,
+      title: "Custom Web & Mobile App Development",
+      subtitle: "User-centric solutions built to scale",
       description:
-        "Leverage the power of artificial intelligence to automate tasks, gain insights, and enhance decision-making processes.",
+        "We design and develop custom web and mobile applications tailored to your specific business needs. Our solutions are built with scalability, performance, and user experience in mind, ensuring your application grows with your business and delivers exceptional value to your customers.",
+      features: [
+        "Responsive web applications",
+        "Native and cross-platform mobile apps",
+        "User experience (UX) design",
+        "API development and integration",
+        "Performance optimization",
+        "Quality assurance and testing",
+      ],
+      color: "blue",
     },
     {
-      icon: <Cog className="w-12 h-12 text-blue-400 mb-4" />,
-      title: "Process Automation",
+      icon: <Brain className="w-16 h-16 text-purple-500" />,
+      title: "Digital Transformation & Tech Consulting",
+      subtitle: "Strategy, automation, and process optimization",
       description:
-        "Transform your business operations with smart automation that eliminates repetitive tasks, reduces errors, and boosts productivity.",
+        "Transform your business operations with our expert technology consulting services. We analyze your current processes, identify opportunities for improvement, and implement automation solutions that reduce costs, increase efficiency, and drive growth.",
+      features: [
+        "Technology strategy and roadmap",
+        "Process automation and optimization",
+        "Legacy system assessment",
+        "Digital workflow design",
+        "Change management support",
+        "Performance metrics and KPIs",
+      ],
+      color: "purple",
     },
     {
-      icon: <ShoppingCart className="w-12 h-12 text-orange-500 mb-4" />,
-      title: "E-commerce",
+      icon: <Rocket className="w-16 h-16 text-green-500" />,
+      title: "MVP & Startup Product Development",
+      subtitle: "Fast-track your product to market",
       description:
-        "Ready to sell online? We'll build you a secure, user-friendly online store that makes shopping a breeze. From product listings to checkout, we ensure your customers have a smooth buying experience.",
+        "Launch your startup idea quickly with our MVP development services. We help you validate your concept, build a minimum viable product, and scale to a full-featured application. Our agile approach ensures you get to market faster while maintaining quality and flexibility.",
+      features: [
+        "MVP development and validation",
+        "Rapid prototyping",
+        "Product-market fit analysis",
+        "Scalable architecture design",
+        "Iterative development approach",
+        "Launch and growth support",
+      ],
+      color: "green",
     },
     {
-      icon: <BarChart3 className="w-12 h-12 text-pink-500 mb-4" />,
-      title: "SEO Services",
+      icon: <Cog className="w-16 h-16 text-orange-500" />,
+      title: "Technology Stack Modernisation & Cloud Integration",
+      subtitle: "Upgrade legacy systems and migrate to the cloud",
       description:
-        "Tired of being invisible online? Let's get your business to the top of Google searches. We use proven strategies to help your customers find you when they're looking for services like yours.",
+        "Modernize your technology infrastructure with our cloud migration and stack modernization services. We help you move from outdated systems to modern, cloud-based solutions that improve performance, security, and scalability while reducing operational costs.",
+      features: [
+        "Cloud migration strategy and execution",
+        "Legacy system modernization",
+        "Infrastructure optimization",
+        "Security and compliance",
+        "DevOps and CI/CD implementation",
+        "Ongoing maintenance and support",
+      ],
+      color: "orange",
+    },
+  ];
+
+  const additionalBenefits = [
+    {
+      icon: <Shield className="w-8 h-8 text-blue-500" />,
+      title: "Secure & Compliant",
+      description:
+        "All our solutions follow industry best practices for security and compliance.",
     },
     {
-      icon: <Server className="w-12 h-12 text-indigo-500 mb-4" />,
-      title: "Web Hosting",
+      icon: <Zap className="w-8 h-8 text-yellow-500" />,
+      title: "Fast Delivery",
       description:
-        "Don't let slow hosting hold you back. Our reliable hosting solutions keep your website fast, secure, and always online. We handle the technical stuff so you can focus on your business.",
+        "Agile methodologies ensure rapid development and quick time-to-market.",
     },
     {
-      icon: <Wrench className="w-12 h-12 text-yellow-500 mb-4" />,
-      title: "Website Maintenance",
+      icon: <Users className="w-8 h-8 text-green-500" />,
+      title: "Expert Team",
       description:
-        "Think of us as your website's personal care team. We keep everything running smoothly with regular updates, security checks, and performance tuning. No technical headaches - we handle it all.",
+        "Work with experienced developers and consultants who understand your business.",
     },
     {
-      icon: <TestTube2 className="w-12 h-12 text-red-500 mb-4" />,
-      title: "Mechanical Testing",
+      icon: <Globe className="w-8 h-8 text-purple-500" />,
+      title: "Scalable Solutions",
       description:
-        "Comprehensive mechanical testing services including stress analysis, fatigue testing, material characterization, and quality control. Our state-of-the-art testing facilities ensure your products meet the highest industry standards.",
-    },
-    {
-      icon: <Bot className="w-12 h-12 text-cyan-500 mb-4" />,
-      title: "Automation & Robotics",
-      description:
-        "Cutting-edge automation and robotics solutions for manufacturing and industrial processes. From robotic assembly lines to automated quality control systems, we help you increase efficiency and precision in your operations.",
-    },
-    {
-      icon: <DraftingCompass className="w-12 h-12 text-emerald-500 mb-4" />,
-      title: "CAD/CAM Services",
-      description:
-        "Professional CAD/CAM services for mechanical design and manufacturing. We provide 3D modeling, simulation, CNC programming, and rapid prototyping to bring your mechanical designs to life with precision and efficiency.",
+        "Build for today, scale for tomorrow with future-proof architecture.",
     },
   ];
 
   return (
-    <div className="space-y-8 px-4 py-8 md:px-8 lg:px-16">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4 text-gray-900">Our Services</h1>
-        <p className="text-xl text-gray-900 dark:text-gray-200 max-w-4xl mx-auto">
-          At Saan-hub Solutions, we deliver comprehensive software development
-          services and solutions that drive digital transformation. Based in
-          Cardiff, our expert team combines technical excellence with industry
-          expertise to create both custom solutions and innovative digital
-          products. From initial development to ongoing maintenance, we provide
-          end-to-end services that help businesses thrive in the digital age.
+    <div className="space-y-16 px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      {/* Hero Section */}
+      <div className="text-center mb-16">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+          Our Services
+        </h1>
+        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          Saan-hub Solutions delivers comprehensive technology services that
+          drive digital transformation and business growth. Based in Cardiff,
+          UK, we partner with startups, SMEs, and organizations to build
+          custom software solutions, modernize technology stacks, and implement
+          digital strategies that deliver measurable results.
         </p>
       </div>
 
-      <div className="mb-8">
-        <h2 className="text-2xl font-semibold mb-6 text-gray-900">
-          Web Development Solutions
-        </h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-            <div className="mb-4">
-              <Code className="w-12 h-12 text-blue-500" />
+      {/* Core Services */}
+      <div className="space-y-16">
+        {coreServices.map((service, index) => (
+          <div
+            key={index}
+            className={`bg-white dark:bg-gray-800 rounded-3xl shadow-xl overflow-hidden ${
+              index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+            } flex flex-col lg:flex`}>
+            <div className="lg:w-1/3 p-8 lg:p-12 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+              <div className="text-center">
+                <div className="inline-block mb-6 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                  {service.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 font-medium">
+                  {service.subtitle}
+                </p>
+              </div>
             </div>
-            <h3 className="text-xl font-semibold mb-3 text-gray-900">
-              Full Stack Web Applications
-            </h3>
-            <p className="text-gray-900 dark:text-gray-200">
-              End-to-end web solutions with dynamic features, database
-              integration, and real-time functionality for complex business
-              needs.
-            </p>
-          </div>
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-            <div className="mb-4">
-              <Globe className="w-12 h-12 text-green-500" />
-            </div>
-            <h3 className="text-xl font-semibold mb-3 text-gray-900">
-              Static Websites
-            </h3>
-            <p className="text-gray-900 dark:text-gray-200">
-              Fast, secure, and cost-effective websites perfect for showcasing
-              your business, portfolio, or landing pages.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="mb-8">
-        <h2 className="text-2xl font-semibold mb-6 text-gray-900">
-          Additional Services
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {additionalServices.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <div className="mb-4">{service.icon}</div>
-              <h3 className="text-lg font-semibold mb-3 text-gray-900">
-                {service.title}
-              </h3>
-              <p className="text-gray-900 dark:text-gray-200 text-sm">
+            <div className="lg:w-2/3 p-8 lg:p-12">
+              <p className="text-lg text-gray-700 dark:text-gray-200 mb-8 leading-relaxed">
                 {service.description}
               </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {service.features.map((feature, featureIndex) => (
+                  <div
+                    key={featureIndex}
+                    className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700 dark:text-gray-300">
+                      {feature}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
+        ))}
+      </div>
+
+      {/* Additional Benefits */}
+      <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 py-16 rounded-3xl px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+              Why Choose Saan-hub Solutions
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              We deliver more than just code—we deliver solutions that drive
+              business success
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {additionalBenefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="inline-block mb-4 bg-blue-50 dark:bg-blue-900/30 p-4 rounded-xl">
+                  {benefit.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {benefit.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="text-center">
-        <button
-          onClick={() => setActivePage("contact")}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              setActivePage("contact");
-            }
-          }}
-          className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">
-          Get in touch
-        </button>
+      {/* Process Overview */}
+      <div className="bg-white dark:bg-gray-800 p-12 rounded-3xl shadow-xl">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+            Our Development Process
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+            We follow a proven methodology that ensures your project succeeds
+            from start to finish
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                  1
+                </span>
+              </div>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                Discovery
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                Understand your needs
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                  2
+                </span>
+              </div>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                Strategy
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                Design the solution
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-green-600 dark:text-green-400">
+                  3
+                </span>
+              </div>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                Build
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                Develop with agility
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-orange-600 dark:text-orange-400">
+                  4
+                </span>
+              </div>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                Launch & Support
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                Deploy and maintain
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white p-12 rounded-3xl shadow-xl">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          Ready to Get Started?
+        </h2>
+        <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
+          Let's discuss how we can help transform your business with our
+          technology solutions.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            onClick={() => setActivePage("contact")}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                setActivePage("contact");
+              }
+            }}
+            className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2">
+            <span>Get a Free Quote</span>
+            <ArrowRight className="w-5 h-5" />
+          </button>
+          <button
+            onClick={() => setActivePage("contact")}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                setActivePage("contact");
+              }
+            }}
+            className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-all duration-300">
+            Schedule a Consultation
+          </button>
+        </div>
       </div>
     </div>
   );
