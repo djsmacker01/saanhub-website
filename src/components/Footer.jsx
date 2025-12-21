@@ -13,8 +13,8 @@ const Footer = ({ setActivePage }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-800 dark:bg-gray-900 text-white p-4 sm:p-6 lg:p-8 mt-12 w-full">
-      <div className="max-w-6xl mx-auto px-4">
+    <footer className="bg-gray-800 dark:bg-gray-900 text-white p-8 sm:p-12 mt-16 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           <div>
             <p className="text-gray-400 mb-4">
