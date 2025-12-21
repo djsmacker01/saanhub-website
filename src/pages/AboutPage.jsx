@@ -59,33 +59,33 @@ const AboutPage = () => {
       title: "Our Mission",
       color: "blue",
       description:
-        "At Saan-hub Solutions, our mission is to deliver innovative software and engineering solutions that drive business transformation. Based in Cardiff, we blend technical excellence with deep industry insight to create both custom software and scalable digital products. We're committed to helping businesses automate processes, enhance their digital presence, and achieve sustainable growth through technology.",
+        "Our mission is to empower businesses with technology solutions that drive growth and transformation. We partner with startups, SMEs, and organizations to deliver custom software, digital transformation strategies, and technology consulting that solve real business challenges. We're committed to helping our clients achieve faster time-to-market, improved efficiency, and scalable growth through innovative technology solutions.",
     },
     {
       icon: <Sparkles className="w-6 h-6 text-purple-500" />,
       title: "Our Vision",
       color: "purple",
       description:
-        "Saan-hub Solutions envisions a future where businesses of all sizes can fully harness the power of digital technology. Based in Cardiff, United Kingdom, we aim to be a leading force in software development—recognized for our custom solutions, AI-powered tools, and innovative digital products. Our goal is to set new benchmarks in quality, reliability, and service excellence across the tech industry.",
+        "We envision a future where every business, regardless of size, can leverage technology to compete and thrive in the digital economy. As a leading tech consultancy and software development partner, we aim to be recognized for delivering solutions that combine technical excellence with business value. Our goal is to set new standards in client partnership, solution quality, and measurable business outcomes.",
     },
     {
       icon: <ShieldCheck className="w-6 h-6 text-green-500" />,
       title: "Our Strengths",
       color: "green",
       description:
-        "Saan-hub Solutions envisions a future where businesses of all sizes can fully harness the power of digital technology. Based in Cardiff, United Kingdom, we strive to be a leading force in software development—known for our custom solutions, AI-driven tools, and innovative digital products. Our goal is to set new standards in quality, reliability, and service excellence across the tech and engineering industry.",
+        "Our core strengths lie in our ability to understand both technology and business. We excel at translating complex business requirements into elegant technical solutions, delivering projects on time and within budget, and providing ongoing support that ensures long-term success. Our expertise spans modern web and mobile technologies, cloud infrastructure, digital transformation strategies, and agile development methodologies.",
     },
     {
       icon: <TrendingUp className="w-6 h-6 text-orange-500" />,
       title: "Innovation & Growth",
       color: "orange",
       description:
-        "At Saan-hub Solutions, innovation is at the core of everything we do. We actively invest in emerging technologies and modern development practices to enhance both our services and digital products. Our commitment to growth goes beyond our own success—we measure it by the real impact our solutions have on our clients' businesses.",
+        "Innovation and continuous improvement drive everything we do. We stay at the forefront of technology trends, investing in modern tools, frameworks, and methodologies to deliver cutting-edge solutions. Our commitment to growth is measured by the success of our clients—we celebrate when our solutions help businesses increase revenue, reduce costs, improve efficiency, and achieve their strategic goals.",
     },
   ];
 
   return (
-    <div className="space-y-8 sm:space-y-12 py-4 sm:py-6 lg:py-8">
+    <div className="space-y-16 sm:space-y-20 px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
       {/* Hero Section */}
       <div className="text-center mb-8 sm:mb-12 lg:mb-16 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl transform -skew-y-6" />
@@ -94,48 +94,52 @@ const AboutPage = () => {
             About Saan-hub Solutions
           </h1>
           <p className="text-base sm:text-lg lg:text-xl text-gray-800 dark:text-gray-200 text-justify leading-relaxed px-4 md:px-8 lg:px-16">
-            Saan-hub Solutions is a recognized software development company
-            based in Cardiff, United Kingdom, specializing in smart digital
-            solutions that enhance business growth, automation, and operational
-            efficiency.
+            Saan-hub Solutions is a Cardiff-based tech consultancy and software
+            development partner that helps businesses grow through digital
+            transformation and custom technology solutions. We combine technical
+            expertise with business acumen to deliver solutions that drive
+            measurable results.
           </p>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="prose dark:prose-invert space-y-8 px-4 md:px-8 lg:px-16">
+      <div className="prose dark:prose-invert space-y-8 max-w-none">
         <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg transform transition-all duration-300 hover:shadow-xl">
           <p className="text-lg leading-relaxed mb-6 text-gray-800 dark:text-gray-200 text-justify">
-            Founded with a vision to transform how businesses operate in the
-            digital age, Saan-hub Solutions combines technical expertise with
-            industry insight to deliver impactful, intelligent solutions. Our
-            team of experienced developers and engineers builds software that
-            solves real-world challenges through automation, AI agents, and
-            precision engineering.
+            Saan-hub Solutions is a technology consultancy and software
+            development company that partners with businesses to solve complex
+            challenges through innovative digital solutions. Based in Cardiff,
+            United Kingdom, we work with startups, SMEs, and organizations
+            across industries to drive digital transformation, improve
+            operational efficiency, and accelerate growth.
           </p>
 
           <p className="text-lg leading-relaxed mb-6 text-gray-800 dark:text-gray-200 text-justify">
-            We take pride in our dual approach to digital excellence: delivering
-            custom software solutions tailored to unique business needs, and
-            maintaining a growing portfolio of proven digital products used by
-            organizations worldwide. Our products—SubletMatch, Customer Support
-            AI Agent, JobPlus, and Fare-Tracker—reflect our commitment to
-            innovation, automation, and design excellence.
+            Our team combines deep technical expertise with business
+            understanding to deliver solutions that not only work flawlessly but
+            also deliver measurable business value. We specialize in custom web
+            and mobile application development, digital transformation
+            consulting, MVP development for startups, and technology stack
+            modernization. Beyond custom solutions, we maintain a portfolio of
+            proven digital products—including SubletMatch, Fare-Tracker,
+            TrackGoal, and Cymru Unleashed—that demonstrate our commitment to
+            innovation and excellence.
           </p>
 
           <p className="text-lg leading-relaxed text-gray-800 dark:text-gray-200 text-justify">
-            What sets us apart is our commitment to long-term partnerships. We
-            don't just deliver software. We provide ongoing support and
-            maintenance to ensure every solution adapts and scales with your
-            business. With a local presence in Cardiff and a global client base,
-            we're positioned to offer responsive service across time zones while
-            maintaining the highest standards of quality and reliability.
+            What sets us apart is our client-focused approach. We don't just build
+            software—we become your technology partner, providing ongoing
+            support, maintenance, and strategic guidance to ensure your solutions
+            evolve with your business needs. Our commitment to long-term
+            partnerships means we're invested in your success, delivering
+            scalable, maintainable solutions that drive real business outcomes.
           </p>
         </div>
       </div>
 
       {/* Mission, Vision, Strengths, Innovation Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 px-4 md:px-8 lg:px-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
         {sections.map((section, index) => (
           <div
             key={index}
@@ -160,7 +164,7 @@ const AboutPage = () => {
       </div>
 
       {/* Team Profiles Section */}
-      <div className="px-4 md:px-8 lg:px-16">
+      <div>
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Meet Our Team
@@ -243,20 +247,21 @@ const AboutPage = () => {
       </div>
 
       {/* Company Leadership */}
-      <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg group transform transition-all duration-300 hover:shadow-xl px-4 md:px-8 lg:px-16">
+      <div className="bg-white dark:bg-gray-800 p-8 sm:p-12 rounded-2xl shadow-lg group transform transition-all duration-300 hover:shadow-xl">
         <div className="flex items-center mb-6">
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white ml-4">
             Company Leadership
           </h3>
         </div>
         <p className="text-gray-800 dark:text-gray-200 leading-relaxed text-justify">
-          Under strong leadership, Saan-hub Solutions has earned a reputation as
-          a trusted name in software development, engineering, and digital
-          innovation. Our management team brings together deep expertise in
-          technology, business strategy, and engineering solutions. We are
-          committed to upholding the highest standards of service delivery,
-          while fostering a culture of continuous improvement, technical
-          excellence, and client-focused innovation.
+          Under experienced leadership, Saan-hub Solutions has built a reputation
+          as a trusted technology partner for businesses seeking digital
+          transformation. Our team brings together expertise in software
+          development, business strategy, and technology consulting to deliver
+          solutions that drive measurable business outcomes. We are committed to
+          maintaining the highest standards of quality, service delivery, and
+          client satisfaction, while continuously evolving our capabilities to
+          meet the changing needs of the digital economy.
         </p>
         <div className="mt-6 flex items-center text-red-600 dark:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <span className="text-sm font-medium">Meet our team</span>
