@@ -14,11 +14,15 @@ import {
   Code2,
   Lightbulb,
 } from "lucide-react";
+import useSEO from "../hooks/useSEO";
 
 const AboutPage = () => {
-  useEffect(() => {
-    document.title = "About | Saan-hub Solutions";
-  }, []);
+  useSEO({
+    title: "About",
+    description:
+      "Learn about Saan-hub Solutions — a Cardiff-based technology consultancy and digital innovation studio helping businesses grow through digital transformation.",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&w=1200&q=75",
+  });
 
   const teamMembers = [
     {

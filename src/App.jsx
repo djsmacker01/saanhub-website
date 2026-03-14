@@ -74,6 +74,7 @@ const App = () => {
             className={`transition-all duration-200 ease-out ${
               transitioning ? "opacity-0 translate-y-3" : "opacity-100 translate-y-0"
             }`}>
+            {/* No max-width here — each page controls its own container */}
             <Routes>
               <Route path="/" element={<HomePage setActivePage={handlePageChange} />} />
               <Route path="/about" element={<AboutPage />} />

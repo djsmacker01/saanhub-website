@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Phone,
@@ -14,9 +15,25 @@ import {
   Github,
 } from "lucide-react";
 
+// ── EmailJS configuration ─────────────────────────────────────────────────────
+// 1. Sign up at https://www.emailjs.com/ (free plan works)
+// 2. Create a Service (e.g. Gmail/Outlook) and note the Service ID
+// 3. Create an Email Template and note the Template ID
+// 4. Copy your Public Key from Account → API Keys
+// 5. Add these 3 lines to your .env file:
+//      VITE_EMAILJS_SERVICE_ID=service_xxxxxxx
+//      VITE_EMAILJS_TEMPLATE_ID=template_xxxxxxx
+//      VITE_EMAILJS_PUBLIC_KEY=xxxxxxxxxxxxxxxx
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || "";
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || "";
+
 const ContactPage = () => {
   useEffect(() => {
     document.title = "Contact | Saan-hub Solutions";
+    const setMeta = (n, c, a = "name") => { let el = document.querySelector(`meta[${a}="${n}"]`); if (!el) { el = document.createElement("meta"); el.setAttribute(a, n); document.head.appendChild(el); } el.setAttribute("content", c); };
+    setMeta("description", "Get in touch with Saan-hub Solutions. Book a free strategy session or send us a message about your project.");
+    setMeta("og:title", "Contact | Saan-hub Solutions", "property");
   }, []);
 
   const [formData, setFormData] = useState({
@@ -56,18 +73,38 @@ const ContactPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmissionStatus(null);
-    if (validateForm()) {
-      setLoading(true);
-      try {
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-        setSubmissionStatus("success");
-        setFormData({ firstName: "", lastName: "", phone: "", email: "", subject: "", message: "" });
-      } catch (error) {
-        setSubmissionStatus("error");
-      } finally {
-        setLoading(false);
-        setTimeout(() => setSubmissionStatus(null), 5000);
+    if (!validateForm()) return;
+
+    setLoading(true);
+    try {
+      if (EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY) {
+        // Real email via EmailJS
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            from_name: `${formData.firstName} ${formData.lastName}`,
+            from_email: formData.email,
+            phone: formData.phone,
+            subject: formData.subject,
+            message: formData.message || "(no message provided)",
+            reply_to: formData.email,
+          },
+          EMAILJS_PUBLIC_KEY
+        );
+      } else {
+        // Fallback simulation (remove once EmailJS is configured)
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+        console.info("EmailJS not configured — form data:", formData);
       }
+      setSubmissionStatus("success");
+      setFormData({ firstName: "", lastName: "", phone: "", email: "", subject: "", message: "" });
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setSubmissionStatus("error");
+    } finally {
+      setLoading(false);
+      setTimeout(() => setSubmissionStatus(null), 6000);
     }
   };
 

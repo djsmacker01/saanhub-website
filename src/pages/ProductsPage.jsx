@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   ExternalLink,
   Globe,
@@ -15,6 +15,25 @@ import {
   Target,
   Cpu,
 } from "lucide-react";
+import useSEO from "../hooks/useSEO";
+
+const LazyImage = ({ src, alt, className }) => {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <div className="relative w-full h-full">
+      {!loaded && (
+        <div className="absolute inset-0 animate-pulse bg-gray-200 dark:bg-gray-700" />
+      )}
+      <img
+        src={src}
+        alt={alt}
+        className={`${className} transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+        onLoad={() => setLoaded(true)}
+        loading="lazy"
+      />
+    </div>
+  );
+};
 
 const products = [
   {
@@ -150,9 +169,12 @@ const products = [
 ];
 
 const ProductsPage = ({ activePage, setActivePage }) => {
-  useEffect(() => {
-    document.title = "Products | Saan-hub Solutions";
-  }, []);
+  useSEO({
+    title: "Products",
+    description:
+      "Explore Saan-hub Solutions' digital products — SubletMatch, Fare-Tracker, Cymru Unleashed, Hailey's Hotel, and TrackGoal.",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&w=1200&q=75",
+  });
 
   if (activePage === "subletmatch") {
     return (
@@ -253,7 +275,7 @@ const ProductsPage = ({ activePage, setActivePage }) => {
                 className={`bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border ${product.border} ${product.hover} transition-all duration-300 group hover:-translate-y-2 hover:shadow-2xl flex flex-col`}>
                 {/* Image banner */}
                 <div className="relative h-52 overflow-hidden">
-                  <img
+                  <LazyImage
                     src={product.image}
                     alt={product.imageAlt}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"

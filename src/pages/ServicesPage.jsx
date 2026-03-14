@@ -19,11 +19,15 @@ import {
   BadgePoundSterling,
   Star,
 } from "lucide-react";
+import useSEO from "../hooks/useSEO";
 
 const ServicesPage = ({ setActivePage }) => {
-  useEffect(() => {
-    document.title = "Services | Saan-hub Solutions";
-  }, []);
+  useSEO({
+    title: "Services",
+    description:
+      "Explore Saan-hub Solutions' technology services — custom web & mobile development, digital transformation consulting, MVP development, AI automation, and more.",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&w=1200&q=75",
+  });
 
   const coreServices = [
     {
