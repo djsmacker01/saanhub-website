@@ -19,14 +19,47 @@ import {
   BadgePoundSterling,
   Star,
 } from "lucide-react";
-import useSEO from "../hooks/useSEO";
+import useSEO, { serviceSchema, breadcrumbSchema, webPageSchema, faqSchema, SITE } from "../hooks/useSEO";
+
+const SERVICES_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    webPageSchema({
+      url: `${SITE.URL}/services`,
+      name: "Technology Services | Web Development, AI & Digital Transformation",
+      description: "Expert technology services: custom web & mobile development, AI automation, MVP startup development, SaaS platforms & digital transformation consulting.",
+      dateModified: "2026-03-14",
+    }),
+    breadcrumbSchema([
+      { name: "Home",     url: `${SITE.URL}/` },
+      { name: "Services", url: `${SITE.URL}/services` },
+    ]),
+    serviceSchema([
+      { id: "web-mobile-development",     name: "Custom Web & Mobile App Development",        description: "User-centric web and mobile applications built with React, Node.js, TypeScript. Scalable, performant, and mobile-first.", price: "800" },
+      { id: "digital-transformation",     name: "Digital Transformation & Tech Consulting",   description: "Strategy, automation, and process optimisation to modernise your business operations and drive growth.", price: "300" },
+      { id: "mvp-startup-development",    name: "MVP & Startup Product Development",          description: "Fast-track your startup idea to market with a minimum viable product built for validation and scale.", price: "800" },
+      { id: "cloud-modernisation",        name: "Technology Stack Modernisation",             description: "Cloud migration, legacy system modernisation, DevOps, CI/CD pipelines and infrastructure optimisation.", price: "300" },
+      { id: "ai-automation-consulting",   name: "AI & Automation Consulting",                 description: "Intelligent workflow automation, AI chatbots, agent systems, and data pipelines using OpenAI and n8n.", price: "300" },
+      { id: "saas-platform-development",  name: "SaaS & Marketplace Platform Development",   description: "End-to-end design and development of scalable SaaS products, digital marketplaces, and B2B platforms.", price: "800" },
+      { id: "technical-advisory",         name: "Technical Advisory & Fractional CTO",       description: "Monthly strategic technical leadership — product roadmap, architecture guidance, and team oversight.", price: "150" },
+      { id: "startup-strategy-session",   name: "Startup Idea Strategy Session",             description: "60–90 minute consultation to validate your platform concept, define your MVP, and create a technical roadmap.", price: "50" },
+    ]),
+    faqSchema([
+      { q: "How much does custom web development cost?",    a: "Custom web application development starts from £800 for simple apps and ranges to £15,000+ for complex SaaS platforms. We provide a free estimate after a discovery call." },
+      { q: "What is included in an MVP development project?", a: "Our MVP projects include product scoping, system architecture, UI/UX design, development, deployment, and 30 days of post-launch bug fix support." },
+      { q: "Do you offer AI integration services?",          a: "Yes. Our AI & Automation Consulting service builds AI chatbots, workflow automation, and intelligent agent systems. Projects start from £300." },
+      { q: "Can you help with cloud migration?",             a: "Yes. We design and execute cloud migration strategies for AWS, Azure, Netlify, and Vercel, including zero-downtime migrations and DevOps setup." },
+    ]),
+  ],
+};
 
 const ServicesPage = ({ setActivePage }) => {
   useSEO({
-    title: "Services",
-    description:
-      "Explore Saan-hub Solutions' technology services — custom web & mobile development, digital transformation consulting, MVP development, AI automation, and more.",
+    title: "Technology Services | Web Development, AI Automation & SaaS | Cardiff",
+    description: "Expert technology services in Cardiff & UK: custom web & mobile apps, AI automation, SaaS platform development, MVP startup builds & digital transformation consulting. Transparent pricing. Free consultation.",
+    keywords: "web development Cardiff, AI automation consultant UK, SaaS development, MVP development startup, digital transformation consulting, cloud migration UK, technical advisory CTO, React Node.js developer, technology services Cardiff",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&w=1200&q=75",
+    structuredData: SERVICES_STRUCTURED_DATA,
   });
 
   const coreServices = [

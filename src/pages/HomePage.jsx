@@ -22,13 +22,35 @@ import {
   Brain,
   CalendarCheck,
 } from "lucide-react";
-import useSEO from "../hooks/useSEO";
+import useSEO, { faqSchema, breadcrumbSchema, webPageSchema, SITE } from "../hooks/useSEO";
+
+const HOME_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    webPageSchema({
+      url: `${SITE.URL}/`,
+      name: "Saan-hub Solutions | Technology Consultancy Cardiff",
+      description: "Cardiff-based technology consultancy specialising in custom web apps, AI automation, SaaS platforms & digital transformation. Free consultation available.",
+      dateModified: "2026-03-14",
+    }),
+    faqSchema([
+      { q: "What services does Saan-hub Solutions offer?", a: "We offer custom web & mobile app development, AI & automation consulting, MVP startup development, digital transformation consulting, SaaS & marketplace development, and technical advisory services." },
+      { q: "How much does a web development project cost?", a: "Project costs range from £800 for simple web apps to £15,000+ for complex SaaS platforms. We offer a free strategy session to provide accurate estimates for your specific project." },
+      { q: "Does Saan-hub Solutions work with startups?", a: "Yes. We specialise in helping founders validate ideas, build MVPs, and scale their products. Our startup strategy sessions start from just £50." },
+      { q: "Where is Saan-hub Solutions based?", a: "We are headquartered in Cardiff, Wales, United Kingdom, and work with clients globally via remote collaboration." },
+      { q: "Can you integrate AI into my existing business?", a: "Absolutely. Our AI & Automation Consulting service designs and implements intelligent workflows, chatbots, and automation systems for businesses of any size, starting from £300." },
+    ]),
+    breadcrumbSchema([{ name: "Home", url: `${SITE.URL}/` }]),
+  ],
+};
 
 const HomePage = ({ setActivePage }) => {
   useSEO({
-    title: "Home",
-    description:
-      "SAAN-HUB SOLUTIONS helps startups and organisations transform ideas into scalable digital products through technology strategy, platform development, and AI automation.",
+    title: "Technology Consultancy Cardiff | Custom Software, AI & Digital Transformation",
+    description: "Cardiff-based technology consultancy specialising in custom web & mobile apps, AI automation, SaaS platforms & digital transformation. Trusted by startups & businesses worldwide. Free strategy consultation.",
+    keywords: "technology consultancy Cardiff, custom software development UK, AI automation consultant, digital transformation, startup MVP development, SaaS platform development, web app development Cardiff, React developer UK, Node.js development, technology strategy",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&w=1200&q=80",
+    structuredData: HOME_STRUCTURED_DATA,
   });
 
   const consultingServices = [

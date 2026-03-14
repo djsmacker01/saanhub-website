@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xsi:schemaLocation="
+    http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Home — highest priority, changes most frequently -->
+  <url>
+    <loc>https://www.saan-hub.com/</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://www.saan-hub.com/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://www.saan-hub.com/" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Saan-hub Solutions — Technology Consultancy Cardiff</image:title>
+    </image:image>
+  </url>
+
+  <!-- Services — very high priority, core conversion page -->
+  <url>
+    <loc>https://www.saan-hub.com/services</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://www.saan-hub.com/services" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://www.saan-hub.com/services" />
+  </url>
+
+  <!-- Contact — high priority conversion page -->
+  <url>
+    <loc>https://www.saan-hub.com/contact</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://www.saan-hub.com/contact" />
+  </url>
+
+  <!-- About — high trust/authority page -->
+  <url>
+    <loc>https://www.saan-hub.com/about</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://www.saan-hub.com/about" />
+  </url>
+
+  <!-- Products — high priority showcase -->
+  <url>
+    <loc>https://www.saan-hub.com/products</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://www.saan-hub.com/products" />
+  </url>
+
+  <!-- Blog — regularly updated content hub -->
+  <url>
+    <loc>https://www.saan-hub.com/blog</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://www.saan-hub.com/blog" />
+  </url>
+
+  <!-- Privacy Policy — low priority but required for compliance trust signals -->
+  <url>
+    <loc>https://www.saan-hub.com/privacy-policy</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.20</priority>
+  </url>
+
+</urlset>

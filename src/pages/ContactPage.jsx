@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import useSEO, { breadcrumbSchema, webPageSchema, SITE } from "../hooks/useSEO";
 import emailjs from "@emailjs/browser";
 import {
   Mail,
@@ -28,13 +29,43 @@ const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || "";
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
 const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || "";
 
+const CONTACT_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    webPageSchema({
+      url: `${SITE.URL}/contact`,
+      name: "Contact Saan-hub Solutions | Cardiff | 07459 253102",
+      description: "Get in touch with Saan-hub Solutions. Call 07459 253102 or email info@saan-hub.com. Free technology strategy consultation available. Based in Cardiff, UK.",
+      dateModified: "2026-03-14",
+    }),
+    breadcrumbSchema([
+      { name: "Home",    url: `${SITE.URL}/` },
+      { name: "Contact", url: `${SITE.URL}/contact` },
+    ]),
+    {
+      "@type": "ContactPage",
+      "@id": `${SITE.URL}/contact#contactpage`,
+      "url": `${SITE.URL}/contact`,
+      "name": "Contact Saan-hub Solutions",
+      "description": "Contact us for technology consulting, project enquiries, or a free strategy session.",
+      "mainEntity": {
+        "@type": "Organization",
+        "@id": `${SITE.URL}/#organization`,
+        "telephone": "+447459253102",
+        "email": "info@saan-hub.com",
+      },
+    },
+  ],
+};
+
 const ContactPage = () => {
-  useEffect(() => {
-    document.title = "Contact | Saan-hub Solutions";
-    const setMeta = (n, c, a = "name") => { let el = document.querySelector(`meta[${a}="${n}"]`); if (!el) { el = document.createElement("meta"); el.setAttribute(a, n); document.head.appendChild(el); } el.setAttribute("content", c); };
-    setMeta("description", "Get in touch with Saan-hub Solutions. Book a free strategy session or send us a message about your project.");
-    setMeta("og:title", "Contact | Saan-hub Solutions", "property");
-  }, []);
+  useSEO({
+    title: "Contact Us | Free Strategy Consultation | Cardiff 07459 253102",
+    description: "Get in touch with Saan-hub Solutions. Call 07459 253102 or email info@saan-hub.com. Based in Cardiff, UK. Book a free technology strategy consultation — no obligation, just expert advice.",
+    keywords: "contact Saan-hub Solutions, technology consultancy contact Cardiff, free strategy consultation, book technology consultation UK, 07459253102, info@saan-hub.com",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&w=1200&q=75",
+    structuredData: CONTACT_STRUCTURED_DATA,
+  });
 
   const [formData, setFormData] = useState({
     firstName: "",

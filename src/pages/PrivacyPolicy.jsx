@@ -11,7 +11,7 @@ import {
   ChevronRight,
   ArrowRight,
 } from "lucide-react";
-import useSEO from "../hooks/useSEO";
+import useSEO, { breadcrumbSchema, webPageSchema, SITE } from "../hooks/useSEO";
 
 const sections = [
   {
@@ -172,13 +172,31 @@ const sections = [
   },
 ];
 
+const PRIVACY_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    webPageSchema({
+      url: `${SITE.URL}/privacy-policy`,
+      name: "Privacy Policy | Saan-hub Solutions",
+      description: "Saan-hub Solutions privacy policy — how we collect, use, and protect your personal data in line with UK GDPR and data protection regulations.",
+      dateModified: "2026-03-14",
+    }),
+    breadcrumbSchema([
+      { name: "Home",           url: `${SITE.URL}/` },
+      { name: "Privacy Policy", url: `${SITE.URL}/privacy-policy` },
+    ]),
+  ],
+};
+
 const PrivacyPolicy = ({ setActivePage }) => {
   const [activeSection, setActiveSection] = useState("introduction");
 
   useSEO({
-    title: "Privacy Policy",
-    description:
-      "Read the Saan-hub Solutions Privacy Policy — how we collect, use, and protect your personal information.",
+    title: "Privacy Policy | UK GDPR Compliant Data Protection",
+    description: "Saan-hub Solutions privacy policy — how we collect, use, store, and protect your personal data in accordance with UK GDPR and data protection regulations. Cardiff, United Kingdom.",
+    keywords: "Saan-hub Solutions privacy policy, GDPR compliance, data protection policy, UK data privacy, personal data handling",
+    noIndex: false,
+    structuredData: PRIVACY_STRUCTURED_DATA,
   });
 
   return (

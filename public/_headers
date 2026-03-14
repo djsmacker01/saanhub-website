@@ -1,0 +1,49 @@
+# Security & Performance Headers — Netlify
+# https://www.saan-hub.com
+
+/*
+  # Prevent clickjacking
+  X-Frame-Options: SAMEORIGIN
+  # Prevent MIME sniffing
+  X-Content-Type-Options: nosniff
+  # XSS protection (legacy browsers)
+  X-XSS-Protection: 1; mode=block
+  # Referrer policy
+  Referrer-Policy: strict-origin-when-cross-origin
+  # Permissions policy (restrict unused APIs)
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  # HSTS — enforce HTTPS for 1 year
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  # Content Security Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.emailjs.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://api.emailjs.com https://images.unsplash.com https://www.google-analytics.com https://analytics.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://api.emailjs.com
+
+# Cache static assets aggressively
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache images for 30 days
+*.jpg
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+*.png
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+*.webp
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+# Cache fonts for 1 year
+*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+# Sitemap & robots — short cache so updates propagate
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+  Content-Type: application/xml
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain
+
+/site.webmanifest
+  Cache-Control: public, max-age=86400
+  Content-Type: application/manifest+json

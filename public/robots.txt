@@ -1,0 +1,68 @@
+# robots.txt — Saan-hub Solutions
+# https://www.saan-hub.com
+
+# ── Allow all well-behaved crawlers ──
+User-agent: *
+Allow: /
+
+# Block access to development/utility paths
+Disallow: /api/
+Disallow: /.env
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /*.json$
+Disallow: /dist/
+
+# Allow key assets explicitly
+Allow: /saan-hub-logo.jpg
+Allow: /og-image.jpg
+Allow: /site.webmanifest
+
+# ── Sitemap ──
+Sitemap: https://www.saan-hub.com/sitemap.xml
+
+# ── Crawl delay (be kind to server) ──
+Crawl-delay: 1
+
+# ── Major search engine bots ──
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# ── Block bad bots ──
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /

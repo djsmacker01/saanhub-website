@@ -15,7 +15,7 @@ import {
   Target,
   Cpu,
 } from "lucide-react";
-import useSEO from "../hooks/useSEO";
+import useSEO, { softwareAppSchema, breadcrumbSchema, webPageSchema, SITE } from "../hooks/useSEO";
 
 const LazyImage = ({ src, alt, className }) => {
   const [loaded, setLoaded] = useState(false);
@@ -168,12 +168,36 @@ const products = [
   },
 ];
 
+const PRODUCTS_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    webPageSchema({
+      url: `${SITE.URL}/products`,
+      name: "Digital Products Portfolio | SubletMatch, Fare-Tracker & More",
+      description: "Explore Saan-hub Solutions' live digital products — AI-powered property platform, transport intelligence, hotel booking, goal tracking, and more.",
+      dateModified: "2026-03-14",
+    }),
+    breadcrumbSchema([
+      { name: "Home",     url: `${SITE.URL}/` },
+      { name: "Products", url: `${SITE.URL}/products` },
+    ]),
+    softwareAppSchema([
+      { id: "subletmatch",   name: "SubletMatch",       category: "BusinessApplication",      description: "AI-powered property subletting marketplace connecting tenants with short-term renters." },
+      { id: "fare-tracker",  name: "Fare-Tracker",      category: "TravelApplication",         description: "Smart transportation intelligence platform for real-time fare tracking and route optimisation." },
+      { id: "cymru",         name: "Cymru Unleashed",   category: "SocialNetworkingApplication", description: "Welsh community and cultural engagement platform celebrating Wales' sporting heritage." },
+      { id: "hailey",        name: "Hailey's Hotel",    category: "TravelApplication",         description: "Premium hotel booking and hospitality management platform with room reservations and amenity showcase." },
+      { id: "trackgoal",     name: "TrackGoal",         category: "BusinessApplication",       description: "Goal tracking and productivity platform for individuals and teams to set, monitor, and achieve objectives." },
+    ]),
+  ],
+};
+
 const ProductsPage = ({ activePage, setActivePage }) => {
   useSEO({
-    title: "Products",
-    description:
-      "Explore Saan-hub Solutions' digital products — SubletMatch, Fare-Tracker, Cymru Unleashed, Hailey's Hotel, and TrackGoal.",
+    title: "Digital Products | SubletMatch, Fare-Tracker, TrackGoal & More",
+    description: "Explore live digital products built by Saan-hub Solutions — SubletMatch (AI property platform), Fare-Tracker (transport intelligence), Hailey's Hotel, TrackGoal & Cymru Unleashed. Proof of our expertise.",
+    keywords: "SubletMatch property platform, Fare-Tracker transport app, TrackGoal productivity, Cymru Unleashed Wales, Hailey Hotel booking, digital products Cardiff, SaaS portfolio, software development portfolio",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&w=1200&q=75",
+    structuredData: PRODUCTS_STRUCTURED_DATA,
   });
 
   if (activePage === "subletmatch") {

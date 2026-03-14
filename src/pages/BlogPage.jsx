@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import useSEO, { breadcrumbSchema, webPageSchema, SITE } from "../hooks/useSEO";
 import {
   Calendar,
   Clock,
@@ -135,10 +136,41 @@ const formatDate = (dateStr) => {
   return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 };
 
+const BLOG_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    webPageSchema({
+      url: `${SITE.URL}/blog`,
+      name: "Technology Blog | AI, Web Development & Digital Transformation",
+      description: "Expert insights on AI automation, web development, digital transformation, and startup growth from Saan-hub Solutions' technology team.",
+      dateModified: "2026-03-14",
+    }),
+    breadcrumbSchema([
+      { name: "Home", url: `${SITE.URL}/` },
+      { name: "Blog", url: `${SITE.URL}/blog` },
+    ]),
+    {
+      "@type": "Blog",
+      "@id": `${SITE.URL}/blog#blog`,
+      "name": "Saan-hub Solutions Technology Blog",
+      "description": "Expert insights on AI, web development, digital transformation, and startup growth.",
+      "url": `${SITE.URL}/blog`,
+      "inLanguage": "en-GB",
+      "publisher": { "@id": `${SITE.URL}/#organization` },
+      "author": { "@id": `${SITE.URL}/#founder` },
+      "about": ["Artificial Intelligence", "Web Development", "Digital Transformation", "SaaS", "Startup Technology"],
+    },
+  ],
+};
+
 const BlogPage = ({ setActivePage }) => {
-  useEffect(() => {
-    document.title = "Blog | Saan-hub Solutions";
-  }, []);
+  useSEO({
+    title: "Technology Blog | AI, Web Development & Digital Innovation Insights",
+    description: "Expert articles on AI automation, custom web development, digital transformation, and startup growth. Practical insights from the Saan-hub Solutions team in Cardiff, UK.",
+    keywords: "technology blog, AI automation blog, web development insights, digital transformation articles, startup technology, Cardiff tech blog, React development tutorial, Node.js tips, SaaS growth",
+    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&w=1200&q=75",
+    structuredData: BLOG_STRUCTURED_DATA,
+  });
 
   const [blogPosts, setBlogPosts] = useState(initialBlogPosts);
   const [selectedPost, setSelectedPost] = useState(null);

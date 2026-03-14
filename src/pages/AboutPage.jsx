@@ -14,14 +14,40 @@ import {
   Code2,
   Lightbulb,
 } from "lucide-react";
-import useSEO from "../hooks/useSEO";
+import useSEO, { breadcrumbSchema, webPageSchema, SITE } from "../hooks/useSEO";
+
+const ABOUT_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    webPageSchema({
+      url: `${SITE.URL}/about`,
+      name: "About Saan-hub Solutions | Cardiff Technology Consultancy",
+      description: "Meet the team behind Saan-hub Solutions — Cardiff-based technology experts helping startups and businesses build digital products, AI systems, and automation platforms.",
+      dateModified: "2026-03-14",
+    }),
+    breadcrumbSchema([
+      { name: "Home",  url: `${SITE.URL}/` },
+      { name: "About", url: `${SITE.URL}/about` },
+    ]),
+    {
+      "@type": "Person",
+      "@id": `${SITE.URL}/#founder`,
+      "name": "Success Adedeji",
+      "jobTitle": "Founder & Lead Developer",
+      "worksFor": { "@id": `${SITE.URL}/#organization` },
+      "knowsAbout": ["React", "Node.js", "AI Integration", "Platform Architecture", "Digital Transformation"],
+      "url": `${SITE.URL}/about`,
+    },
+  ],
+};
 
 const AboutPage = () => {
   useSEO({
-    title: "About",
-    description:
-      "Learn about Saan-hub Solutions — a Cardiff-based technology consultancy and digital innovation studio helping businesses grow through digital transformation.",
+    title: "About Us | Cardiff Tech Consultancy Team & Mission",
+    description: "Meet the team behind Saan-hub Solutions — Cardiff-based technology strategists building digital platforms, AI systems & automation tools. Our mission: making world-class tech expertise accessible to every founder.",
+    keywords: "about Saan-hub Solutions, Cardiff technology team, Success Adedeji founder, technology consultancy team, digital innovation studio, Welsh tech company",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&w=1200&q=75",
+    structuredData: ABOUT_STRUCTURED_DATA,
   });
 
   const teamMembers = [

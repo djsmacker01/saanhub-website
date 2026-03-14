@@ -1,0 +1,7 @@
+# SPA fallback — Netlify
+# All routes fall back to index.html for React Router to handle
+/*    /index.html   200
+
+# HTTPS redirect (handled automatically by Netlify, but explicit for clarity)
+http://www.saan-hub.com/*  https://www.saan-hub.com/:splat  301!
+http://saan-hub.com/*      https://www.saan-hub.com/:splat  301!
