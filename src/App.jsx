@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -12,52 +13,47 @@ import ProductsPage from "./pages/ProductsPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import LoadingPage from "./pages/LoadingPage";
 
+// Map page IDs (used by child components) → URL paths
+const PAGE_TO_PATH = {
+  home: "/",
+  about: "/about",
+  services: "/services",
+  products: "/products",
+  blog: "/blog",
+  contact: "/contact",
+  "privacy-policy": "/privacy-policy",
+  subletmatch: "/subletmatch",
+  "fare-tracker": "/fare-tracker",
+};
+
+// Derive an active-page ID from a pathname (for Navbar highlight)
+export const pathToPage = (pathname) => {
+  if (pathname === "/") return "home";
+  const seg = pathname.replace(/^\//, "").split("/")[0];
+  return seg || "home";
+};
+
 const App = () => {
-  const [activePage, setActivePage] = useState(() => {
-    const savedPage = localStorage.getItem("activePage");
-    return savedPage || "home";
-  });
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isPageTransitioning, setIsPageTransitioning] = useState(false);
+  const [transitioning, setTransitioning] = useState(false);
 
+  // Scroll to top on every route change
   useEffect(() => {
-    localStorage.setItem("activePage", activePage);
-  }, [activePage]);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
 
-  const handlePageChange = (newPage) => {
-    setIsPageTransitioning(true);
+  const handlePageChange = (page) => {
+    const path = PAGE_TO_PATH[page] ?? `/${page}`;
+    setTransitioning(true);
     setTimeout(() => {
-      setActivePage(newPage);
-      setTimeout(() => {
-        setIsPageTransitioning(false);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 50);
-    }, 200);
+      navigate(path);
+      setTimeout(() => setTransitioning(false), 50);
+    }, 150);
   };
 
-  const renderPage = () => {
-    switch (activePage) {
-      case "home":
-        return <HomePage setActivePage={handlePageChange} />;
-      case "about":
-        return <AboutPage />;
-      case "services":
-        return <ServicesPage setActivePage={handlePageChange} />;
-      case "blog":
-        return <BlogPage />;
-      case "contact":
-        return <ContactPage />;
-      case "products":
-        return <ProductsPage setActivePage={handlePageChange} />;
-      case "privacy-policy":
-        return <PrivacyPolicy />;
-      case "subletmatch":
-      case "fare-tracker":
-        return <LoadingPage setActivePage={handlePageChange} />;
-      default:
-        return <HomePage setActivePage={handlePageChange} />;
-    }
-  };
+  const activePage = pathToPage(location.pathname);
 
   return (
     <div className={`min-h-screen ${isDarkMode ? "dark" : ""}`}>
@@ -74,11 +70,23 @@ const App = () => {
           className={`${
             isDarkMode ? "bg-gray-900" : "bg-white"
           } min-h-screen flex-1 transition-colors duration-300`}>
-          <div 
-            className={`max-w-7xl mx-auto ${
-              isPageTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
-            } transition-all duration-300 ease-out`}>
-            {renderPage()}
+          <div
+            className={`transition-all duration-200 ease-out ${
+              transitioning ? "opacity-0 translate-y-3" : "opacity-100 translate-y-0"
+            }`}>
+            <Routes>
+              <Route path="/" element={<HomePage setActivePage={handlePageChange} />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/services" element={<ServicesPage setActivePage={handlePageChange} />} />
+              <Route path="/products" element={<ProductsPage setActivePage={handlePageChange} />} />
+              <Route path="/blog" element={<BlogPage setActivePage={handlePageChange} />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy setActivePage={handlePageChange} />} />
+              <Route path="/subletmatch" element={<LoadingPage setActivePage={handlePageChange} />} />
+              <Route path="/fare-tracker" element={<LoadingPage setActivePage={handlePageChange} />} />
+              {/* Catch-all → home */}
+              <Route path="*" element={<HomePage setActivePage={handlePageChange} />} />
+            </Routes>
           </div>
         </main>
 

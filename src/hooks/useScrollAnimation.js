@@ -38,3 +38,4 @@ export const useScrollAnimation = (options = {}) => {
 
 export default useScrollAnimation;
 
+

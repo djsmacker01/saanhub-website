@@ -8,502 +8,335 @@ import {
   Zap,
   Users,
   Code,
+  Home,
+  MapPin,
+  Trophy,
+  Hotel,
+  Target,
+  Cpu,
 } from "lucide-react";
 
+const products = [
+  {
+    id: "subletmatch",
+    title: "SubletMatch",
+    tagline: "AI-Powered Property Subletting Platform",
+    color: "blue",
+    accent: "from-blue-600 to-blue-800",
+    border: "border-blue-200 dark:border-blue-800/40",
+    hover: "hover:border-blue-400 dark:hover:border-blue-600",
+    badge: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
+    icon: <Home className="w-8 h-8 text-white" />,
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&w=900&q=75",
+    imageAlt: "Modern apartment building",
+    status: "Live",
+    statusColor: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
+    description:
+      "A comprehensive AI-powered subletting marketplace that intelligently matches tenants with short-term accommodation. Features smart filtering, secure messaging, and automated background checks.",
+    features: ["AI-powered matching", "Secure messaging", "Background checks", "In-app payments"],
+    badges: [
+      { icon: <Shield className="w-4 h-4" />, label: "Enterprise Security" },
+      { icon: <Zap className="w-4 h-4" />, label: "AI Matching" },
+      { icon: <Users className="w-4 h-4" />, label: "User-Friendly" },
+    ],
+    techStack: ["Angular", "Node.js", "Supabase", "Express", "Tailwind CSS"],
+    link: null,
+    ctaLabel: "Learn More",
+  },
+  {
+    id: "fare-tracker",
+    title: "Fare-Tracker",
+    tagline: "Smart Transportation Intelligence Platform",
+    color: "green",
+    accent: "from-emerald-600 to-green-800",
+    border: "border-green-200 dark:border-green-800/40",
+    hover: "hover:border-green-400 dark:hover:border-green-600",
+    badge: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
+    icon: <MapPin className="w-8 h-8 text-white" />,
+    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&w=900&q=75",
+    imageAlt: "Transportation and transit",
+    status: "Live",
+    statusColor: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
+    description:
+      "An AI-powered transportation intelligence platform featuring smart route planning, real-time fare tracking, and automated workflows for optimal transportation decisions.",
+    features: ["Real-time tracking", "AI predictions", "Route planning", "Cost analytics"],
+    badges: [
+      { icon: <Shield className="w-4 h-4" />, label: "Real-time Data" },
+      { icon: <Zap className="w-4 h-4" />, label: "AI Predictions" },
+      { icon: <Users className="w-4 h-4" />, label: "Easy to Use" },
+    ],
+    techStack: ["React", "JavaScript", "CSS3", "HTML5", "Netlify"],
+    link: "https://faretracker.netlify.app/",
+    ctaLabel: "Visit Website",
+  },
+  {
+    id: "cymru",
+    title: "Cymru Unleashed",
+    tagline: "Celebrating Welsh Heritage & Sport",
+    color: "red",
+    accent: "from-red-600 to-rose-800",
+    border: "border-red-200 dark:border-red-800/40",
+    hover: "hover:border-red-400 dark:hover:border-red-600",
+    badge: "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300",
+    icon: <Trophy className="w-8 h-8 text-white" />,
+    image: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&w=900&q=75",
+    imageAlt: "Sports and community",
+    status: "Live",
+    statusColor: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
+    description:
+      "A grassroots initiative celebrating Wales' historic participation in UEFA Women's Euro 2025. Empowering young Welsh girls through sport, creativity, and digital storytelling.",
+    features: ["Cultural storytelling", "Community platform", "Youth engagement", "Digital gallery"],
+    badges: [
+      { icon: <Users className="w-4 h-4" />, label: "Community" },
+      { icon: <Globe className="w-4 h-4" />, label: "Cultural Pride" },
+      { icon: <Zap className="w-4 h-4" />, label: "Digital Innovation" },
+    ],
+    techStack: ["React", "Next.js", "Tailwind CSS", "Vercel", "TypeScript"],
+    link: "https://cymruunleashed.com/",
+    ctaLabel: "Visit Website",
+  },
+  {
+    id: "hailey",
+    title: "Hailey's Hotel",
+    tagline: "Premium Hotel Booking Experience",
+    color: "purple",
+    accent: "from-purple-600 to-violet-800",
+    border: "border-purple-200 dark:border-purple-800/40",
+    hover: "hover:border-purple-400 dark:hover:border-purple-600",
+    badge: "bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300",
+    icon: <Hotel className="w-8 h-8 text-white" />,
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&w=900&q=75",
+    imageAlt: "Luxury hotel",
+    status: "Live",
+    statusColor: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
+    description:
+      "A comprehensive hotel booking platform featuring room reservations, amenities showcase, gallery views, and contact management for exceptional hospitality experiences.",
+    features: ["Room reservations", "Amenities showcase", "Photo gallery", "Contact management"],
+    badges: [
+      { icon: <Users className="w-4 h-4" />, label: "Hotel Booking" },
+      { icon: <Globe className="w-4 h-4" />, label: "Room Management" },
+      { icon: <Zap className="w-4 h-4" />, label: "Online Reservations" },
+    ],
+    techStack: ["React", "JavaScript", "CSS3", "HTML5", "Netlify"],
+    link: "https://haileyhotel.netlify.app/",
+    ctaLabel: "Visit Website",
+  },
+  {
+    id: "trackgoal",
+    title: "TrackGoal",
+    tagline: "Goal Tracking & Productivity Platform",
+    color: "orange",
+    accent: "from-orange-500 to-amber-700",
+    border: "border-orange-200 dark:border-orange-800/40",
+    hover: "hover:border-orange-400 dark:hover:border-orange-600",
+    badge: "bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300",
+    icon: <Target className="w-8 h-8 text-white" />,
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&w=900&q=75",
+    imageAlt: "Goal tracking and analytics",
+    status: "Live",
+    statusColor: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
+    description:
+      "A powerful goal tracking and productivity platform featuring goal setting, progress tracking, milestone management, and analytics to help individuals and teams achieve their objectives.",
+    features: ["Goal setting", "Progress tracking", "Milestone alerts", "Team analytics"],
+    badges: [
+      { icon: <Shield className="w-4 h-4" />, label: "Goal Tracking" },
+      { icon: <Zap className="w-4 h-4" />, label: "Progress Analytics" },
+      { icon: <Users className="w-4 h-4" />, label: "Team Collaboration" },
+    ],
+    techStack: ["React", "Node.js", "Supabase", "Express", "Tailwind CSS"],
+    link: "https://trackgoal.online/",
+    ctaLabel: "Visit Website",
+  },
+];
+
 const ProductsPage = ({ activePage, setActivePage }) => {
-  // Update document title
   useEffect(() => {
     document.title = "Products | Saan-hub Solutions";
   }, []);
 
-  const features = [
-    { icon: <Shield className="w-6 h-6" />, text: "Enterprise Security" },
-    { icon: <Zap className="w-6 h-6" />, text: "Lightning Fast" },
-    { icon: <Users className="w-6 h-6" />, text: "User-Friendly" },
-  ];
-
-  // SubletMatch Content
-  const renderSubletMatch = () => (
-    <div className="space-y-8 py-8 animate-fade-in-up">
-      <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
-        SubletMatch
-      </h1>
-      <p className="text-xl text-gray-800 dark:text-gray-200 text-justify">
-        SubletMatch is a comprehensive business management system designed for
-        service providers. It streamlines bookings, team management, and service
-        delivery, ensuring efficient operations.
-      </p>
-      {/* Add more specific content, features, screenshots etc. for SubletMatch here */}
-      <button
-        onClick={() => setActivePage("products")}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            setActivePage("products");
-          }
-        }}
-        className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
-        <ArrowRight className="w-5 h-5 transform rotate-180" />
-        Back to Products Overview
-      </button>
-    </div>
-  );
-
-  // Fare-Tracker Content
-  const renderFareTracker = () => (
-    <div className="space-y-8 py-8 animate-fade-in-up">
-      <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
-        Fare-Tracker
-      </h1>
-      <p className="text-xl text-gray-800 dark:text-gray-200 text-justify">
-        Fare-Tracker is a revolutionary transportation solution by Saan-hub
-        Solutions. It makes fare tracking effortless and efficient, transforming
-        urban mobility.
-      </p>
-      {/* Add more specific content, features, screenshots etc. for Fare-Tracker here */}
-      <button
-        onClick={() => setActivePage("products")}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            setActivePage("products");
-          }
-        }}
-        className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
-        <ArrowRight className="w-5 h-5 transform rotate-180" />
-        Back to Products Overview
-      </button>
-    </div>
-  );
-
   if (activePage === "subletmatch") {
-    return renderSubletMatch();
+    return (
+      <div className="space-y-8 py-8 px-4 sm:px-6 lg:px-8 animate-fade-in-up max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white">SubletMatch</h1>
+        <p className="text-xl text-gray-800 dark:text-gray-200 leading-relaxed">
+          SubletMatch is an AI-powered property subletting marketplace that
+          intelligently connects tenants looking to sublet with people searching
+          for short-term accommodation.
+        </p>
+        <button
+          onClick={() => setActivePage("products")}
+          className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+          <ArrowRight className="w-5 h-5 transform rotate-180" />
+          Back to Products Overview
+        </button>
+      </div>
+    );
   }
 
   if (activePage === "fare-tracker") {
-    return renderFareTracker();
+    return (
+      <div className="space-y-8 py-8 px-4 sm:px-6 lg:px-8 animate-fade-in-up max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Fare-Tracker</h1>
+        <p className="text-xl text-gray-800 dark:text-gray-200 leading-relaxed">
+          Fare-Tracker is an AI-powered transportation intelligence platform that
+          makes fare tracking effortless and efficient, transforming urban mobility.
+        </p>
+        <button
+          onClick={() => setActivePage("products")}
+          className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+          <ArrowRight className="w-5 h-5 transform rotate-180" />
+          Back to Products Overview
+        </button>
+      </div>
+    );
   }
 
   return (
-    <div className="space-y-16 sm:space-y-20 px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-      {/* Hero Section */}
-      <div className="text-center mb-12 sm:mb-16 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl transform -skew-y-6" />
-        <div className="relative">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-white animate-fade-in">
+    <div className="space-y-0">
+      {/* ── Hero ── */}
+      <div className="relative overflow-hidden min-h-[400px] flex items-center">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&w=1920&q=70"
+            alt="Digital products"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-950/92 via-blue-950/88 to-indigo-950/90" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 w-full text-center">
+          <div className="inline-flex items-center space-x-2 bg-blue-500/15 border border-blue-400/30 rounded-full px-5 py-2 mb-6">
+            <Cpu className="w-4 h-4 text-blue-400" />
+            <span className="text-sm font-semibold text-blue-300 tracking-wide">
+              Built in Cardiff · Used Globally
+            </span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-white">
             Our Products
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-800 dark:text-gray-200 max-w-3xl mx-auto leading-relaxed px-4">
-            Explore our innovative digital products, designed to streamline your
-            business operations and achieve digital excellence.
+          <p className="text-xl text-blue-100/90 max-w-3xl mx-auto leading-relaxed">
+            We don&apos;t just consult — we build. These are our own digital products,
+            each live and serving real users. From property tech to productivity
+            tools, built with modern stacks and production-grade infrastructure.
           </p>
-        </div>
-      </div>
-
-      {/* Products Grid */}
-      <div className="flex flex-col gap-6 lg:gap-8 animate-fade-in-up max-w-4xl mx-auto">
-        {/* SubletMatch Card */}
-        <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-3xl shadow-lg border border-blue-100 dark:border-blue-800/30 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group hover:-translate-y-2 hover:border-blue-200 dark:hover:border-blue-700 h-full flex flex-col relative overflow-hidden">
-          {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent dark:from-blue-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
-          <div className="relative z-10">
-            <div className="flex items-center justify-between mb-6 min-w-0">
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-600 dark:text-blue-400 mr-3">
-              SubletMatch
-            </h3>
-              <div className="flex space-x-0.5 flex-shrink-0">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                    className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-400 fill-current"
-                />
-              ))}
-            </div>
-          </div>
-            
-            <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed flex-grow text-sm sm:text-base">
-            Developed by{" "}
-              <span className="text-blue-600 dark:text-blue-400 font-semibold">
-              Saan-hub Solutions
-            </span>
-              , SubletMatch is a comprehensive business management system for service providers to manage bookings, teams, and services efficiently.
-          </p>
-            
-          <div className="flex flex-wrap gap-2 mb-6">
-            {features.map((feature, index) => (
-              <span
-                key={index}
-                  className="inline-flex items-center px-3 py-2 rounded-full text-xs sm:text-sm bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-700/50">
-                {feature.icon}
-                <span className="ml-2">{feature.text}</span>
-              </span>
-            ))}
-          </div>
-
-          {/* Tech Stack */}
-          <div className="mb-6">
-            <div className="flex items-center mb-3">
-              <Code className="w-4 h-4 text-blue-600 dark:text-blue-400 mr-2" />
-              <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">Tech Stack</span>
-            </div>
-            <div className="flex flex-wrap gap-1.5">
-              {['Angular', 'Node.js', 'Supabase', 'Express', 'Tailwind CSS'].map((tech, index) => (
-                <span
-                  key={index}
-                  className="px-2 py-1 text-xs bg-blue-100 dark:bg-blue-800/50 text-blue-800 dark:text-blue-200 rounded-md border border-blue-200 dark:border-blue-700/50">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-            
-            <button className="group w-full flex items-center justify-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold transition-all duration-300 py-3 px-4 rounded-xl border border-blue-200 dark:border-blue-700/50 hover:bg-blue-50 dark:hover:bg-blue-900/30">
-            Learn More
-            <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-          </button>
-          </div>
-        </div>
-
-        {/* Fare-Tracker Card */}
-        <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-3xl shadow-lg border border-green-100 dark:border-green-800/30 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group hover:-translate-y-2 hover:border-green-200 dark:hover:border-green-700 h-full flex flex-col relative overflow-hidden">
-          {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent dark:from-green-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
-          <div className="relative z-10">
-            <div className="flex items-center justify-between mb-6 min-w-0">
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-green-600 dark:text-green-400 mr-3">
-              Fare-Tracker
-            </h3>
-              <div className="flex space-x-0.5 flex-shrink-0">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                    className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-400 fill-current"
-                />
-              ))}
-            </div>
-          </div>
-            
-            <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed flex-grow text-sm sm:text-base">
-              An AI-powered transportation intelligence platform developed by{" "}
-              <span className="text-green-600 dark:text-green-400 font-semibold">
-                Saan-hub Solutions
-              </span>
-              . Features smart route planning, real-time fare tracking, AI predictions, and automated workflows for optimal transportation decisions.
-            </p>
-            
-          <div className="flex flex-wrap gap-2 mb-6">
-            {features.map((feature, index) => (
-              <span
-                key={index}
-                  className="inline-flex items-center px-3 py-2 rounded-full text-xs sm:text-sm bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-700/50">
-                {feature.icon}
-                <span className="ml-2">{feature.text}</span>
-              </span>
-            ))}
-          </div>
-
-          {/* Tech Stack */}
-          <div className="mb-6">
-            <div className="flex items-center mb-3">
-              <Code className="w-4 h-4 text-green-600 dark:text-green-400 mr-2" />
-              <span className="text-sm font-semibold text-green-600 dark:text-green-400">Tech Stack</span>
-            </div>
-            <div className="flex flex-wrap gap-1.5">
-              {['React', 'JavaScript', 'CSS3', 'HTML5', 'Netlify'].map((tech, index) => (
-                <span
-                  key={index}
-                  className="px-2 py-1 text-xs bg-green-100 dark:bg-green-800/50 text-green-800 dark:text-green-200 rounded-md border border-green-200 dark:border-green-700/50">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-            
-            <a 
-              href="https://faretracker.netlify.app/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group w-full flex items-center justify-center text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 font-semibold transition-all duration-300 py-3 px-4 rounded-xl border border-green-200 dark:border-green-700/50 hover:bg-green-50 dark:hover:bg-green-900/30">
-              Visit Website
-              <ExternalLink className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-        </div>
-
-        {/* Cymru Unleashed Card */}
-        <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-3xl shadow-lg border border-red-100 dark:border-red-800/30 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group hover:-translate-y-2 hover:border-red-200 dark:hover:border-red-700 h-full flex flex-col relative overflow-hidden">
-          {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-red-50/50 to-transparent dark:from-red-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
-          <div className="relative z-10">
-            <div className="flex items-center justify-between mb-6 min-w-0">
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-red-600 dark:text-red-400 mr-3">
-                Cymru Unleashed
-              </h3>
-              <div className="flex space-x-0.5 flex-shrink-0">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-400 fill-current"
-                  />
-                ))}
-              </div>
-            </div>
-            
-            <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed flex-grow text-sm sm:text-base">
-              A grassroots initiative celebrating Wales' historic participation in UEFA Women's Euro 2025. 
-              Empowering young Welsh girls through sport, creativity, and innovation. 
-              Built with{" "}
-              <span className="text-red-600 dark:text-red-400 font-semibold">
-                Saan-hub Solutions
-              </span>
-              , this platform showcases digital storytelling and cultural pride.
-            </p>
-            
-            <div className="flex flex-wrap gap-2 mb-6">
-              <span className="inline-flex items-center px-3 py-2 rounded-full text-xs sm:text-sm bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-700/50">
-                <Users className="w-4 h-4" />
-                <span className="ml-2">Community Impact</span>
-              </span>
-              <span className="inline-flex items-center px-3 py-2 rounded-full text-xs sm:text-sm bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-700/50">
-                <Globe className="w-4 h-4" />
-                <span className="ml-2">Cultural Pride</span>
-              </span>
-              <span className="inline-flex items-center px-3 py-2 rounded-full text-xs sm:text-sm bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-700/50">
-                <Zap className="w-4 h-4" />
-                <span className="ml-2">Digital Innovation</span>
-              </span>
-            </div>
-
-            {/* Tech Stack */}
-            <div className="mb-6">
-              <div className="flex items-center mb-3">
-                <Code className="w-4 h-4 text-red-600 dark:text-red-400 mr-2" />
-                <span className="text-sm font-semibold text-red-600 dark:text-red-400">Tech Stack</span>
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {['React', 'Next.js', 'Tailwind CSS', 'Vercel', 'TypeScript'].map((tech, index) => (
-                  <span
-                    key={index}
-                    className="px-2 py-1 text-xs bg-red-100 dark:bg-red-800/50 text-red-800 dark:text-red-200 rounded-md border border-red-200 dark:border-red-700/50">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            <a 
-              href="https://cymruunleashed.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group w-full flex items-center justify-center text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-semibold transition-all duration-300 py-3 px-4 rounded-xl border border-red-200 dark:border-red-700/50 hover:bg-red-50 dark:hover:bg-red-900/30">
-              Visit Website
-              <ExternalLink className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-        </div>
-
-        {/* Hailey's Hotel Card */}
-        <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-3xl shadow-lg border border-purple-100 dark:border-purple-800/30 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group hover:-translate-y-2 hover:border-purple-200 dark:hover:border-purple-700 h-full flex flex-col relative overflow-hidden">
-          {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-transparent dark:from-purple-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
-          <div className="relative z-10">
-            <div className="flex items-center justify-between mb-6 min-w-0">
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-purple-600 dark:text-purple-400 mr-3">
-                Hailey's Hotel
-              </h3>
-              <div className="flex space-x-0.5 flex-shrink-0">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-400 fill-current"
-                  />
-                ))}
-              </div>
-            </div>
-            
-            <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed flex-grow text-sm sm:text-base">
-              A comprehensive hotel booking platform developed by{" "}
-              <span className="text-purple-600 dark:text-purple-400 font-semibold">
-                Saan-hub Solutions
-              </span>
-              . Features room reservations, amenities showcase, gallery, and contact management for exceptional hospitality experiences.
-            </p>
-            
-            <div className="flex flex-wrap gap-2 mb-6">
-              <span className="inline-flex items-center px-3 py-2 rounded-full text-xs sm:text-sm bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-700/50">
-                <Users className="w-4 h-4" />
-                <span className="ml-2">Hotel Booking</span>
-              </span>
-              <span className="inline-flex items-center px-3 py-2 rounded-full text-xs sm:text-sm bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-700/50">
-                <Globe className="w-4 h-4" />
-                <span className="ml-2">Room Management</span>
-              </span>
-              <span className="inline-flex items-center px-3 py-2 rounded-full text-xs sm:text-sm bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-700/50">
-                <Zap className="w-4 h-4" />
-                <span className="ml-2">Online Reservations</span>
-              </span>
-            </div>
-
-            {/* Tech Stack */}
-            <div className="mb-6">
-              <div className="flex items-center mb-3">
-                <Code className="w-4 h-4 text-purple-600 dark:text-purple-400 mr-2" />
-                <span className="text-sm font-semibold text-purple-600 dark:text-purple-400">Tech Stack</span>
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {['React', 'JavaScript', 'CSS3', 'HTML5', 'Netlify'].map((tech, index) => (
-                  <span
-                    key={index}
-                    className="px-2 py-1 text-xs bg-purple-100 dark:bg-purple-800/50 text-purple-800 dark:text-purple-200 rounded-md border border-purple-200 dark:border-purple-700/50">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            <a 
-              href="https://haileyhotel.netlify.app/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group w-full flex items-center justify-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-semibold transition-all duration-300 py-3 px-4 rounded-xl border border-purple-200 dark:border-purple-700/50 hover:bg-purple-50 dark:hover:bg-purple-900/30">
-              Visit Website
-              <ExternalLink className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-        </div>
-
-        {/* TrackGoal Card */}
-        <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-3xl shadow-lg border border-orange-100 dark:border-orange-800/30 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group hover:-translate-y-2 hover:border-orange-200 dark:hover:border-orange-700 h-full flex flex-col relative overflow-hidden">
-          {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-transparent dark:from-orange-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
-          <div className="relative z-10">
-            <div className="flex items-center justify-between mb-6 min-w-0">
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-600 dark:text-orange-400 mr-3">
-                TrackGoal
-              </h3>
-              <div className="flex space-x-0.5 flex-shrink-0">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-400 fill-current"
-                  />
-                ))}
-              </div>
-            </div>
-            
-            <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed flex-grow text-sm sm:text-base">
-              A powerful goal tracking and productivity platform developed by{" "}
-              <span className="text-orange-600 dark:text-orange-400 font-semibold">
-                Saan-hub Solutions
-              </span>
-              . Features goal setting, progress tracking, milestone management, and analytics to help individuals and teams achieve their objectives efficiently.
-            </p>
-            
-            <div className="flex flex-wrap gap-2 mb-6">
-              <span className="inline-flex items-center px-3 py-2 rounded-full text-xs sm:text-sm bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-700/50">
-                <Shield className="w-4 h-4" />
-                <span className="ml-2">Goal Tracking</span>
-              </span>
-              <span className="inline-flex items-center px-3 py-2 rounded-full text-xs sm:text-sm bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-700/50">
-                <Zap className="w-4 h-4" />
-                <span className="ml-2">Progress Analytics</span>
-              </span>
-              <span className="inline-flex items-center px-3 py-2 rounded-full text-xs sm:text-sm bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-700/50">
-                <Users className="w-4 h-4" />
-                <span className="ml-2">Team Collaboration</span>
-              </span>
-            </div>
-
-            {/* Tech Stack */}
-            <div className="mb-6">
-              <div className="flex items-center mb-3">
-                <Code className="w-4 h-4 text-orange-600 dark:text-orange-400 mr-2" />
-                <span className="text-sm font-semibold text-orange-600 dark:text-orange-400">Tech Stack</span>
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {['React', 'Node.js', 'Supabase', 'Express', 'Tailwind CSS'].map((tech, index) => (
-                  <span
-                    key={index}
-                    className="px-2 py-1 text-xs bg-orange-100 dark:bg-orange-800/50 text-orange-800 dark:text-orange-200 rounded-md border border-orange-200 dark:border-orange-700/50">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            <a 
-              href="https://trackgoal.online/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group w-full flex items-center justify-center text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 font-semibold transition-all duration-300 py-3 px-4 rounded-xl border border-orange-200 dark:border-orange-700/50 hover:bg-orange-50 dark:hover:bg-orange-900/30">
-              Visit Website
-              <ExternalLink className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Global Reach Section */}
-      <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-12 sm:p-16 rounded-3xl relative overflow-hidden animate-fade-in-up">
-        <div className="absolute inset-0 bg-grid-white/10" />
-        <div className="relative flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex-1">
-            <h3 className="text-3xl font-bold mb-6">Global Reach</h3>
-            <p className="text-lg leading-relaxed">
-              While proudly headquartered in Cardiff, our vision extends
-              globally. We're committed to delivering world-class digital
-              solutions that transcend borders, helping businesses worldwide
-              achieve their digital transformation goals through innovative
-              technology and exceptional service.
-            </p>
-          </div>
-          <div className="relative">
-            <div className="w-40 h-40 bg-white bg-opacity-20 rounded-full flex items-center justify-center animate-pulse">
-              <Globe className="w-20 h-20" />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full animate-ping" />
-          </div>
-        </div>
-      </div>
-
-      {/* Company Overview */}
-      <div className="bg-gradient-to-r from-gray-100 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-12 sm:p-16 rounded-3xl animate-fade-in-up">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <p className="text-xl text-gray-900 dark:text-gray-200 leading-relaxed">
-            <span className="text-blue-600 font-semibold">
-              Saan-hub Solutions
-            </span>
-            , legally registered as Saan-hub Solutions, is a software
-            development company based in Cardiff, United Kingdom. We specialize
-            in delivering high-quality software solutions and comprehensive
-            maintenance services to businesses of all sizes.
-          </p>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="mt-10 flex flex-wrap justify-center gap-6">
             {[
-              {
-                number: "100+",
-                label: "Projects Completed",
-              },
-              {
-                number: "50+",
-                label: "Happy Clients",
-              },
-              {
-                number: "24/7",
-                label: "Support",
-              },
-            ].map((stat, index) => (
+              { value: "5+", label: "Live Products" },
+              { value: "100%", label: "Uptime SLA" },
+              { value: "Modern", label: "Tech Stacks" },
+              { value: "Real", label: "Users Served" },
+            ].map((s, i) => (
+              <div key={i} className="text-center">
+                <p className="text-2xl font-extrabold text-white">{s.value}</p>
+                <p className="text-xs text-blue-300 mt-0.5">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Products Grid ── */}
+      <div className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3">
+              Our Portfolio
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+              Explore Our Digital Products
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+            {products.map((product) => (
               <div
-                key={index}
-                className="p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md">
-                <div className="text-2xl font-bold text-blue-600">
-                  {stat.number}
+                key={product.id}
+                className={`bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border ${product.border} ${product.hover} transition-all duration-300 group hover:-translate-y-2 hover:shadow-2xl flex flex-col`}>
+                {/* Image banner */}
+                <div className="relative h-52 overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.imageAlt}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${product.accent} opacity-60`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  {/* Icon + status */}
+                  <div className="absolute top-4 left-4">
+                    <div className={`p-2.5 rounded-xl bg-gradient-to-br ${product.accent} shadow-lg`}>
+                      {product.icon}
+                    </div>
+                  </div>
+                  <div className="absolute top-4 right-4">
+                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${product.statusColor}`}>
+                      {product.status}
+                    </span>
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-xl font-bold text-white leading-tight">{product.title}</h3>
+                    <p className="text-white/75 text-xs mt-1">{product.tagline}</p>
+                  </div>
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
-                  {stat.label}
+
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-grow">
+                  {/* Ratings */}
+                  <div className="flex items-center space-x-1 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 text-yellow-400 fill-current" />
+                    ))}
+                    <span className="text-xs text-gray-500 dark:text-gray-400 ml-1">5.0</span>
+                  </div>
+
+                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-5 flex-grow">
+                    {product.description}
+                  </p>
+
+                  {/* Feature chips */}
+                  <div className="flex flex-wrap gap-1.5 mb-5">
+                    {product.features.map((f, i) => (
+                      <span
+                        key={i}
+                        className={`text-xs px-2.5 py-1 rounded-full font-medium ${product.badge}`}>
+                        {f}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Tech stack */}
+                  <div className="mb-5">
+                    <div className="flex items-center mb-2">
+                      <Code className="w-3.5 h-3.5 text-gray-500 dark:text-gray-400 mr-1.5" />
+                      <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+                        Tech Stack
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {product.techStack.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-2 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md border border-gray-200 dark:border-gray-600">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  {product.link ? (
+                    <a
+                      href={product.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`mt-auto w-full flex items-center justify-center font-semibold py-3 px-4 rounded-xl border-2 ${product.border} ${product.badge} hover:opacity-80 transition-all duration-300 text-sm group/btn`}>
+                      {product.ctaLabel}
+                      <ExternalLink className="w-4 h-4 ml-2 transform group-hover/btn:translate-x-0.5 transition-transform" />
+                    </a>
+                  ) : (
+                    <button className={`mt-auto w-full flex items-center justify-center font-semibold py-3 px-4 rounded-xl border-2 ${product.border} ${product.badge} hover:opacity-80 transition-all duration-300 text-sm group/btn`}>
+                      {product.ctaLabel}
+                      <ArrowRight className="w-4 h-4 ml-2 transform group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
@@ -511,43 +344,83 @@ const ProductsPage = ({ activePage, setActivePage }) => {
         </div>
       </div>
 
-      {/* Call to Action */}
-      <div className="bg-gradient-to-r from-gray-900 to-blue-900 text-white p-12 sm:p-16 rounded-3xl animate-fade-in-up">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-3xl font-bold mb-6">
-              Ready to Transform Your Business?
-            </h3>
-            <p className="text-lg leading-relaxed mb-8">
-              From startups to established enterprises, our software solutions
-              are powering businesses across the United Kingdom. Join the
-              growing number of organizations achieving digital excellence with
-              Saan-hub Solutions.
-            </p>
-            <button
-              onClick={() => setActivePage("contact")}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  setActivePage("contact");
-                }
+      {/* ── Global Reach ── */}
+      <div className="relative overflow-hidden py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&w=1920&q=65"
+            alt="Global digital reach"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-700/92 to-purple-800/90" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-10">
+            <div className="flex-1 text-white">
+              <h3 className="text-3xl sm:text-4xl font-bold mb-5">Global Reach</h3>
+              <p className="text-lg text-blue-100 leading-relaxed max-w-xl">
+                While proudly headquartered in Cardiff, our vision extends globally.
+                We deliver world-class digital solutions that transcend borders,
+                helping businesses worldwide achieve their digital transformation
+                goals through innovative technology and exceptional service.
+              </p>
+            </div>
+            <div className="grid grid-cols-3 gap-6 text-center text-white">
+              {[
+                { value: "15+", label: "Projects Delivered" },
+                { value: "10+", label: "Happy Clients" },
+                { value: "24/7", label: "Support" },
+              ].map((s, i) => (
+                <div key={i} className="bg-white/10 border border-white/20 rounded-2xl px-6 py-5">
+                  <p className="text-3xl font-extrabold">{s.value}</p>
+                  <p className="text-sm text-blue-200 mt-1">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── CTA ── */}
+      <div className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-gradient-to-br from-gray-900 to-blue-950 text-white rounded-3xl p-12 sm:p-16 relative overflow-hidden shadow-2xl">
+            <div
+              className="absolute inset-0 opacity-20"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 25% 50%, rgba(99,102,241,0.5) 0%, transparent 60%), radial-gradient(circle at 75% 30%, rgba(59,130,246,0.4) 0%, transparent 55%)",
               }}
-              className="bg-white text-gray-900 px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
-              Get Started Today
-            </button>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              "Custom Development",
-              "AI Integration",
-              "Cloud Solutions",
-              "24/7 Support",
-            ].map((service, index) => (
-              <div
-                key={index}
-                className="bg-white/10 p-4 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
-                <p className="text-center font-medium">{service}</p>
+            />
+            <div className="relative grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <h3 className="text-3xl sm:text-4xl font-bold mb-5">
+                  Ready to Build Something Remarkable?
+                </h3>
+                <p className="text-lg text-white/75 leading-relaxed mb-8">
+                  From startups to established enterprises, our software solutions
+                  are powering businesses across the United Kingdom. Join the
+                  growing number of organisations achieving digital excellence.
+                </p>
+                <button
+                  onClick={() => setActivePage("contact")}
+                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                  <span>Get Started Today</span>
+                  <ArrowRight className="w-5 h-5" />
+                </button>
               </div>
-            ))}
+              <div className="grid grid-cols-2 gap-4">
+                {["Custom Development", "AI Integration", "Cloud Solutions", "24/7 Support"].map(
+                  (s, i) => (
+                    <div
+                      key={i}
+                      className="bg-white/8 border border-white/15 p-5 rounded-xl backdrop-blur-sm hover:bg-white/15 transition-all duration-300 text-center">
+                      <p className="font-semibold text-white">{s}</p>
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </div>

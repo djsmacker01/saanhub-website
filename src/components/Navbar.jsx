@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Cpu } from "lucide-react";
+import { useLocation } from "react-router-dom";
+import { pathToPage } from "../App";
 
-const Navbar = ({ activePage, setActivePage, isDarkMode, setIsDarkMode }) => {
+const Navbar = ({ setActivePage, isDarkMode, setIsDarkMode }) => {
+  const location = useLocation();
+  const activePage = pathToPage(location.pathname);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showProductsDropdown, setShowProductsDropdown] = useState(false);
 
@@ -44,23 +48,15 @@ const Navbar = ({ activePage, setActivePage, isDarkMode, setIsDarkMode }) => {
                 setIsMobileMenuOpen(false);
               }}
               className="flex items-center space-x-3 group bg-slate-700 px-4 py-2.5 rounded-lg hover:bg-slate-600 transition-all duration-200">
-              <div className="relative flex items-center justify-center bg-white rounded p-1.5">
-                <img
-                  src="/saan-hub-logo.jpg"
-                  alt="Saan-hub Solutions Logo"
-                  className="h-8 sm:h-10 w-auto object-contain"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "/log1.png";
-                  }}
-                />
+              <div className="relative flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg p-2">
+                <Cpu className="h-6 w-6 sm:h-7 sm:w-7 text-white" strokeWidth={1.5} />
               </div>
               <div className="hidden sm:flex flex-col">
-                <span className="text-lg sm:text-xl font-bold leading-tight bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+                <span className="text-lg sm:text-xl font-bold leading-tight bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent tracking-tight">
                   SAAN-HUB
                 </span>
-                <span className="text-xs font-semibold text-gray-300 leading-tight tracking-wide">
-                  SOLUTIONS
+                <span className="text-[10px] font-semibold text-gray-400 leading-tight tracking-[0.15em] uppercase">
+                  Solutions
                 </span>
               </div>
             </button>

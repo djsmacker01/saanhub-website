@@ -30,3 +30,4 @@ const AnimatedSection = ({
 
 export default AnimatedSection;
 
+
