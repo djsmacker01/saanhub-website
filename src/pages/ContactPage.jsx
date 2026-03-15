@@ -346,13 +346,13 @@ const ContactPage = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-xl h-52 mb-2">
                 <img
                   src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&w=700&q=75"
-                  alt="United Kingdom"
+                  alt="University of South Wales, Newport"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent" />
                 <div className="absolute bottom-4 left-4">
-                  <p className="text-white font-bold text-lg">United Kingdom</p>
-                  <p className="text-white/70 text-sm">Founded in Wales · Serving the UK</p>
+                  <p className="text-white font-bold text-lg">University of South Wales</p>
+                  <p className="text-white/70 text-sm">Stiwdio Entrepreneurship · Usk Way, Newport NP20 2BP</p>
                 </div>
               </div>
 
@@ -378,9 +378,9 @@ const ContactPage = () => {
                   icon: <MapPin className="w-6 h-6" />,
                   iconBg: "bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400",
                   title: "Visit Us",
-                  value: "United Kingdom",
+                  value: "University of South Wales, Stiwdio Entrepreneurship",
                   href: null,
-                  sub: "Remote-first · UK-wide",
+                  sub: "Usk Way, Newport NP20 2BP",
                 },
                 {
                   icon: <Clock className="w-6 h-6" />,
