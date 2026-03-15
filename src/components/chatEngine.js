@@ -46,7 +46,7 @@ What would you like to know?`,
   {
     id: "about", category: "company",
     patterns: ["who are you", "what is saan", "about saan", "tell me about your company", "about your company", "what does saan hub do", "who is saan hub", "saan hub solutions", "about saanhub", "what kind of company"],
-    response: `**Saan-hub Solutions** is a Cardiff-based **technology consultancy and digital innovation studio** founded to help startups and organisations transform ideas into scalable digital products.
+    response: `**Saan-hub Solutions** is a UK-based **technology consultancy and digital innovation studio** founded to help startups and organisations transform ideas into scalable digital products.
 
 **What makes us different:**
 • We are **technology strategists** — not just developers
@@ -84,14 +84,14 @@ A world where brilliant ideas are not blocked by technical complexity. Every fou
   {
     id: "location", category: "company",
     patterns: ["where are you", "location", "cardiff", "where are you based", "address", "uk", "united kingdom", "wales", "where do you operate", "office location", "headquarters", "where is the office"],
-    response: `📍 **Headquarters: Cardiff, United Kingdom** 🏴󠁧󠁢󠁷󠁬󠁳󠁥
+    response: `📍 **Headquarters: United Kingdom** 🇬🇧 (Founded in Cardiff, Wales 🏴󠁧󠁢󠁷󠁬󠁳󠁥)
 
-We're proud to be a **Welsh tech company** based in the heart of Cardiff — one of the UK's fastest-growing tech cities.
+We're a **UK technology consultancy** with roots in Cardiff, Wales — proud of our Welsh heritage and serving clients across the entire UK.
 
 **Coverage:**
 • UK-wide projects (remote & in-person where possible)
 • International clients — we work globally
-• Cardiff-based clients can arrange in-person meetings
+• UK-based clients can arrange in-person meetings or video calls
 
 **Contact:**
 📞 **07459 253102**
@@ -138,7 +138,7 @@ We also collaborate with a trusted network of specialists including UI/UX design
 
 ✅ **Post-launch support** — We don't disappear after handover. Ongoing maintenance and advisory available.
 
-✅ **Cardiff-based, globally capable** — Local accountability with global-standard delivery.`,
+✅ **UK-based, globally capable** — Local accountability with global-standard delivery.`,
     suggestions: ["What services do you offer?", "Can I see your pricing?", "What have you built?"],
   },
 
@@ -945,7 +945,7 @@ All frontends are **mobile-first and fully responsive** as standard.`,
 
 📞 **Phone:** 07459 253102
 📧 **Email:** info@saan-hub.com
-📍 **Location:** Cardiff, United Kingdom
+📍 **Location:** United Kingdom (Founded in Wales)
 ⏰ **Hours:** Monday–Friday, 9am–6pm GMT
 
 **Best way to reach us:**
@@ -1142,7 +1142,7 @@ Upon full payment completion:
 • Payments accepted internationally
 
 **In-person meetings:**
-Cardiff-based clients can arrange in-person sessions for kick-offs, workshops, or key reviews.
+UK-based clients can arrange in-person sessions for kick-offs, workshops, or key reviews.
 
 📞 Wherever you are: **07459 253102**`,
     suggestions: ["What communication tools do you use?", "What time zone are you in?", "How do I start a remote project?"],
@@ -1216,7 +1216,7 @@ We're open to partnerships with agencies, consultancies, and technology provider
 If you refer a client to us and the project completes, we offer a referral fee. Contact us for details.
 
 **Internships:**
-We occasionally take on paid interns from Cardiff-based universities. Email with your course and availability.
+We occasionally take on paid interns from UK universities. Email with your course and availability.
 
 📞 Partnership enquiries: **07459 253102**`,
     suggestions: ["What technologies do you specialise in?", "How do I contact you?", "What services do you offer?"],
