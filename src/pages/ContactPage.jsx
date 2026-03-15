@@ -34,8 +34,8 @@ const CONTACT_STRUCTURED_DATA = {
   "@graph": [
     webPageSchema({
       url: `${SITE.URL}/contact`,
-      name: "Contact Saan-hub Solutions | Cardiff | 07459 253102",
-      description: "Get in touch with Saan-hub Solutions. Call 07459 253102 or email info@saan-hub.com. Free technology strategy consultation available. Based in Cardiff, UK.",
+      name: "Contact Saan-hub Solutions | UK | 07459 253102",
+      description: "Get in touch with Saan-hub Solutions. Call 07459 253102 or email info@saan-hub.com. Free technology strategy consultation available. Serving businesses across the UK.",
       dateModified: "2026-03-14",
     }),
     breadcrumbSchema([
@@ -60,9 +60,9 @@ const CONTACT_STRUCTURED_DATA = {
 
 const ContactPage = () => {
   useSEO({
-    title: "Contact Us | Free Strategy Consultation | Cardiff 07459 253102",
-    description: "Get in touch with Saan-hub Solutions. Call 07459 253102 or email info@saan-hub.com. Based in Cardiff, UK. Book a free technology strategy consultation — no obligation, just expert advice.",
-    keywords: "contact Saan-hub Solutions, technology consultancy contact Cardiff, free strategy consultation, book technology consultation UK, 07459253102, info@saan-hub.com",
+    title: "Contact Us | Free Strategy Consultation | UK 07459 253102",
+    description: "Get in touch with Saan-hub Solutions. Call 07459 253102 or email info@saan-hub.com. UK technology consultancy. Book a free technology strategy consultation — no obligation, just expert advice.",
+    keywords: "contact Saan-hub Solutions, technology consultancy contact UK, free strategy consultation, book technology consultation UK, 07459253102, info@saan-hub.com",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&w=1200&q=75",
     structuredData: CONTACT_STRUCTURED_DATA,
   });
@@ -347,13 +347,13 @@ const ContactPage = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-xl h-52 mb-2">
                 <img
                   src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&w=700&q=75"
-                  alt="Cardiff, United Kingdom"
+                  alt="United Kingdom"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent" />
                 <div className="absolute bottom-4 left-4">
-                  <p className="text-white font-bold text-lg">Cardiff, UK</p>
-                  <p className="text-white/70 text-sm">United Kingdom</p>
+                  <p className="text-white font-bold text-lg">United Kingdom</p>
+                  <p className="text-white/70 text-sm">Founded in Wales · Serving the UK</p>
                 </div>
               </div>
 
@@ -379,9 +379,9 @@ const ContactPage = () => {
                   icon: <MapPin className="w-6 h-6" />,
                   iconBg: "bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400",
                   title: "Visit Us",
-                  value: "Cardiff, United Kingdom",
+                  value: "United Kingdom",
                   href: null,
-                  sub: "By appointment only",
+                  sub: "Remote-first · UK-wide",
                 },
                 {
                   icon: <Clock className="w-6 h-6" />,
