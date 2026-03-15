@@ -28,7 +28,6 @@ const SERVICES_STRUCTURED_DATA = {
       url: `${SITE.URL}/services`,
       name: "Technology Services | Web Development, AI & Digital Transformation",
       description: "Expert technology services: custom web & mobile development, AI automation, MVP startup development, SaaS platforms & digital transformation consulting.",
-      dateModified: "2026-03-14",
     }),
     breadcrumbSchema([
       { name: "Home",     url: `${SITE.URL}/` },

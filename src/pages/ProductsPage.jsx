@@ -175,7 +175,6 @@ const PRODUCTS_STRUCTURED_DATA = {
       url: `${SITE.URL}/products`,
       name: "Digital Products Portfolio | SubletMatch, Fare-Tracker & More",
       description: "Explore Saan-hub Solutions' live digital products — AI-powered property platform, transport intelligence, hotel booking, goal tracking, and more.",
-      dateModified: "2026-03-14",
     }),
     breadcrumbSchema([
       { name: "Home",     url: `${SITE.URL}/` },
