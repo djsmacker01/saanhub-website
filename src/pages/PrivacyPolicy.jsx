@@ -179,7 +179,6 @@ const PRIVACY_STRUCTURED_DATA = {
       url: `${SITE.URL}/privacy-policy`,
       name: "Privacy Policy | Saan-hub Solutions",
       description: "Saan-hub Solutions privacy policy — how we collect, use, and protect your personal data in line with UK GDPR and data protection regulations.",
-      dateModified: "2026-03-14",
     }),
     breadcrumbSchema([
       { name: "Home",           url: `${SITE.URL}/` },

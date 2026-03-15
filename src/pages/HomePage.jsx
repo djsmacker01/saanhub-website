@@ -454,8 +454,9 @@ const HomePage = ({ setActivePage }) => {
                       <ExternalLink className="w-4 h-4" />
                     </button>
                   ) : (
-                    <span className="text-sm font-medium text-gray-400 dark:text-gray-500">
-                      Coming Soon
+                    <span className="inline-flex items-center space-x-1.5 text-sm font-medium text-yellow-600 dark:text-yellow-400">
+                      <span className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
+                      <span>In Development</span>
                     </span>
                   )}
                 </div>
