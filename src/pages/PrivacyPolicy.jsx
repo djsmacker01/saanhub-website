@@ -193,7 +193,7 @@ const PrivacyPolicy = ({ setActivePage }) => {
 
   useSEO({
     title: "Privacy Policy | UK GDPR Compliant Data Protection",
-    description: "Saan-hub Solutions privacy policy — how we collect, use, store, and protect your personal data in accordance with UK GDPR and data protection regulations. Cardiff, United Kingdom.",
+    description: "Saan-hub Solutions privacy policy — how we collect, use, store, and protect your personal data in accordance with UK GDPR and data protection regulations. United Kingdom.",
     keywords: "Saan-hub Solutions privacy policy, GDPR compliance, data protection policy, UK data privacy, personal data handling",
     noIndex: false,
     structuredData: PRIVACY_STRUCTURED_DATA,
@@ -308,7 +308,7 @@ const PrivacyPolicy = ({ setActivePage }) => {
                   </div>
                   <div className="flex items-center space-x-3 bg-white/10 rounded-xl px-4 py-3">
                     <MapPin className="w-4 h-4 text-blue-200" />
-                    <span className="text-sm font-medium">Cardiff, United Kingdom</span>
+                    <span className="text-sm font-medium">United Kingdom</span>
                   </div>
                 </div>
                 {setActivePage && (
