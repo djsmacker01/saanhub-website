@@ -20,7 +20,7 @@ const Header = ({ isDarkMode }) => {
           </a>
           <div className={`flex items-center space-x-2 ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}>
             <MapPin className="w-4 h-4" />
-            <span>Cardiff, United Kingdom</span>
+            <span>United Kingdom</span>
           </div>
         </div>
       </div>

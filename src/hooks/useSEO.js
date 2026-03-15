@@ -7,10 +7,10 @@ const SITE_NAME  = "Saan-hub Solutions";
 const TWITTER_HANDLE = "@saanhubsolutions";
 
 const DEFAULT_DESC =
-  "Cardiff-based technology consultancy helping startups and organisations build intelligent digital platforms, AI automation systems, and scalable SaaS products. Free strategy consultation available.";
+  "UK technology consultancy helping startups and organisations build intelligent digital platforms, AI automation systems, and scalable SaaS products. Serving businesses across the UK. Free strategy consultation available.";
 
 const DEFAULT_KEYWORDS =
-  "technology consultancy Cardiff, software development UK, AI automation, digital transformation, custom web development, SaaS development, MVP startup, mobile app development, React developer Cardiff, Node.js development, Saan-hub Solutions";
+  "technology consultancy UK, software development UK, AI automation, digital transformation, custom web development, SaaS development, MVP startup, mobile app development, React developer UK, Node.js development, Saan-hub Solutions, technology consultancy Cardiff";
 
 const DEFAULT_IMAGE =
   "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&w=1200&q=80";
@@ -91,7 +91,7 @@ const useSEO = ({
   useEffect(() => {
     const fullTitle = title
       ? `${title} | ${SITE_NAME}`
-      : `${SITE_NAME} | Technology Consultancy Cardiff`;
+      : `${SITE_NAME} | UK Technology Consultancy`;
 
     // ── Document title ──
     document.title = fullTitle;

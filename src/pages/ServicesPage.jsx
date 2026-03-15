@@ -55,9 +55,9 @@ const SERVICES_STRUCTURED_DATA = {
 
 const ServicesPage = ({ setActivePage }) => {
   useSEO({
-    title: "Technology Services | Web Development, AI Automation & SaaS | Cardiff",
-    description: "Expert technology services in Cardiff & UK: custom web & mobile apps, AI automation, SaaS platform development, MVP startup builds & digital transformation consulting. Transparent pricing. Free consultation.",
-    keywords: "web development Cardiff, AI automation consultant UK, SaaS development, MVP development startup, digital transformation consulting, cloud migration UK, technical advisory CTO, React Node.js developer, technology services Cardiff",
+    title: "Technology Services | Web Development, AI Automation & SaaS | UK",
+    description: "Expert technology services across the UK: custom web & mobile apps, AI automation, SaaS platform development, MVP startup builds & digital transformation consulting. Transparent pricing. Free consultation.",
+    keywords: "web development UK, AI automation consultant UK, SaaS development, MVP development startup, digital transformation consulting, cloud migration UK, technical advisory CTO, React Node.js developer UK, technology services UK, web development Cardiff",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&w=1200&q=75",
     structuredData: SERVICES_STRUCTURED_DATA,
   });
@@ -319,7 +319,7 @@ const ServicesPage = ({ setActivePage }) => {
             <div className="inline-flex items-center space-x-2 bg-white/10 border border-white/20 rounded-full px-5 py-2 mb-6">
               <Zap className="w-4 h-4 text-blue-300" />
               <span className="text-sm font-semibold text-blue-200 tracking-wide">
-                Cardiff-Based · UK &amp; Global
+                UK-Based · Serving Globally
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-white leading-tight">

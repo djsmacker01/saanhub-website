@@ -70,7 +70,7 @@ const Footer = ({ setActivePage }) => {
             </button>
 
             <p className="text-sm text-gray-400 leading-relaxed mb-6">
-              Cardiff-based technology consultancy and digital innovation studio.
+              UK technology consultancy and digital innovation studio, founded in Wales.
               We help startups and organisations build intelligent digital platforms,
               automation systems, and AI-driven solutions.
             </p>
@@ -164,7 +164,7 @@ const Footer = ({ setActivePage }) => {
               </li>
               <li className="flex items-start space-x-3 text-sm text-gray-400">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-purple-500" />
-                <span>Cardiff, United Kingdom</span>
+                <span>United Kingdom</span>
               </li>
               <li className="text-sm text-gray-500">
                 Mon–Fri · 9am–6pm GMT
@@ -201,7 +201,7 @@ const Footer = ({ setActivePage }) => {
               Contact
             </button>
             <span className="text-xs text-gray-600">
-              Built in Cardiff 🏴󠁧󠁢󠁷󠁬󠁳󠁿
+              Founded in Wales 🏴󠁧󠁢󠁷󠁬󠁳󠁿
             </span>
           </div>
         </div>

@@ -166,7 +166,7 @@ const BLOG_STRUCTURED_DATA = {
 const BlogPage = ({ setActivePage }) => {
   useSEO({
     title: "Technology Blog | AI, Web Development & Digital Innovation Insights",
-    description: "Expert articles on AI automation, custom web development, digital transformation, and startup growth. Practical insights from the Saan-hub Solutions team in Cardiff, UK.",
+    description: "Expert articles on AI automation, custom web development, digital transformation, and startup growth. Practical insights from the Saan-hub Solutions team across the UK.",
     keywords: "technology blog, AI automation blog, web development insights, digital transformation articles, startup technology, Cardiff tech blog, React development tutorial, Node.js tips, SaaS growth",
     image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&w=1200&q=75",
     structuredData: BLOG_STRUCTURED_DATA,
