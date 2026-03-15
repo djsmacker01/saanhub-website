@@ -534,7 +534,7 @@ Hotel booking & hospitality management system
 🎯 **TrackGoal** *(Live)* — Productivity
 Goal tracking & productivity platform
 
-🏴󠁧󠁢󠁷󠁬󠁳󠁥 **Cymru Unleashed** *(In Development)* — Community
+🏴󠁧󠁢󠁷󠁬󠁳󠁥 **Cymru Unleashed** *(Live)* — Community
 Welsh community, sports & cultural platform
 
 📷 **ResQCam** *(In Development)* — SafetyTech
@@ -656,12 +656,12 @@ This platform demonstrates expertise in **booking systems, payment integration, 
     patterns: ["cymru", "cymru unleashed", "wales", "welsh", "welsh platform", "community platform", "sports platform", "welsh community"],
     response: `**Cymru Unleashed — Welsh Community Platform** 🏴󠁧󠁢󠁷󠁬󠁳󠁥
 
-*Status: 🔧 In Development*
+*Status: ✅ Live — [cymruunleashed.com](https://cymruunleashed.com/)*
 
 **What it is:**
 A community-driven digital platform celebrating Welsh culture, sports, events, and community engagement — connecting people across Wales.
 
-**Planned features:**
+**Features:**
 • 🏉 Welsh sports news & event coverage
 • 🗺 Community events map & calendar
 • 👥 Local group & club profiles
@@ -671,7 +671,7 @@ A community-driven digital platform celebrating Welsh culture, sports, events, a
 
 **Industry:** Community Technology / Cultural Platform
 
-As a Cardiff-based company, this reflects our **commitment to Wales and the communities we're part of**.`,
+This reflects our **commitment to Wales and the communities we're part of**.`,
     suggestions: ["What other products are in development?", "Tell me about ResQCam", "Tell me about TrackGoal"],
   },
 
