@@ -111,6 +111,9 @@ const HomePage = ({ setActivePage }) => {
     },
   ];
 
+  // Placeholder gradient when project image fails to load (data URI avoids extra request)
+  const projectImageFallback = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='300' viewBox='0 0 700 300'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234f46e5'/%3E%3Cstop offset='100%25' style='stop-color:%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='700' height='300' fill='url(%23g)'/%3E%3C/svg%3E";
+
   const innovationProjects = [
     {
       icon: <Home className="w-7 h-7" />,
@@ -123,7 +126,7 @@ const HomePage = ({ setActivePage }) => {
       status: "Live",
       statusColor: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
       page: "subletmatch",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&w=700&q=70",
+      image: "/projects/subletmatch.svg",
     },
     {
       icon: <Camera className="w-7 h-7" />,
@@ -136,7 +139,7 @@ const HomePage = ({ setActivePage }) => {
       status: "In Development",
       statusColor: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/40 dark:text-yellow-300",
       page: null,
-      image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&w=700&q=70",
+      image: "/projects/resqcam.svg",
     },
     {
       icon: <HardHat className="w-7 h-7" />,
@@ -149,7 +152,7 @@ const HomePage = ({ setActivePage }) => {
       status: "In Development",
       statusColor: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/40 dark:text-yellow-300",
       page: null,
-      image: "https://images.unsplash.com/photo-1504256134044-16cf7c88e0d0?auto=format&w=700&q=70",
+      image: "/projects/safeguard.svg",
     },
   ];
 
@@ -417,12 +420,17 @@ const HomePage = ({ setActivePage }) => {
               <div
                 key={i}
                 className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 overflow-hidden bg-indigo-100 dark:bg-indigo-900/30">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = projectImageFallback;
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                   <div className="absolute top-3 right-3 flex items-center space-x-1.5">

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="700" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669"/>
+      <stop offset="100%" style="stop-color:#047857"/>
+    </linearGradient>
+    <linearGradient id="hat" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="vest" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef3c7"/>
+      <stop offset="100%" style="stop-color:#fde68a"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="300" fill="url(#bg)"/>
+  <ellipse cx="350" cy="240" rx="120" ry="25" fill="#065f46" opacity="0.5"/>
+  <path d="M250 140 L350 80 L450 140 L450 200 L250 200 Z" fill="url(#hat)"/>
+  <path d="M250 140 L255 200 L445 200 L450 140" stroke="#d97706" stroke-width="3" fill="none"/>
+  <rect x="290" y="200" width="120" height="100" fill="url(#vest)" rx="4"/>
+  <rect x="310" y="210" width="30" height="40" fill="#78716c"/>
+  <rect x="360" y="210" width="30" height="40" fill="#78716c"/>
+  <path d="M320 260 L380 260" stroke="#f59e0b" stroke-width="6" stroke-linecap="round"/>
+  <rect x="265" y="205" width="30" height="25" fill="#fbbf24" rx="2"/>
+  <rect x="405" y="205" width="30" height="25" fill="#fbbf24" rx="2"/>
+  <text x="520" y="260" fill="#a7f3d0" font-family="system-ui,sans-serif" font-size="14" font-weight="600">WORKER SAFETY</text>
+</svg>
