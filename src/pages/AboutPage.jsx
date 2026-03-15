@@ -21,8 +21,8 @@ const ABOUT_STRUCTURED_DATA = {
   "@graph": [
     webPageSchema({
       url: `${SITE.URL}/about`,
-      name: "About Saan-hub Solutions | Cardiff Technology Consultancy",
-      description: "Meet the team behind Saan-hub Solutions — Cardiff-based technology experts helping startups and businesses build digital products, AI systems, and automation platforms.",
+      name: "About Saan-hub Solutions | UK Technology Consultancy",
+      description: "Meet the team behind Saan-hub Solutions — UK technology experts helping startups and businesses build digital products, AI systems, and automation platforms.",
       dateModified: "2026-03-14",
     }),
     breadcrumbSchema([
@@ -43,9 +43,9 @@ const ABOUT_STRUCTURED_DATA = {
 
 const AboutPage = () => {
   useSEO({
-    title: "About Us | Cardiff Tech Consultancy Team & Mission",
-    description: "Meet the team behind Saan-hub Solutions — Cardiff-based technology strategists building digital platforms, AI systems & automation tools. Our mission: making world-class tech expertise accessible to every founder.",
-    keywords: "about Saan-hub Solutions, Cardiff technology team, Success Adedeji founder, technology consultancy team, digital innovation studio, Welsh tech company",
+    title: "About Us | UK Tech Consultancy Team & Mission",
+    description: "Meet the team behind Saan-hub Solutions — UK technology strategists building digital platforms, AI systems & automation tools. Founded in Wales, serving businesses across the UK. Our mission: making world-class tech expertise accessible to every founder.",
+    keywords: "about Saan-hub Solutions, UK technology team, Success Adedeji founder, technology consultancy team, digital innovation studio, UK tech company, Welsh tech company",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&w=1200&q=75",
     structuredData: ABOUT_STRUCTURED_DATA,
   });
@@ -153,7 +153,7 @@ const AboutPage = () => {
               <div className="inline-flex items-center space-x-2 bg-blue-500/15 border border-blue-400/30 rounded-full px-4 py-1.5 mb-6">
                 <MapPin className="w-4 h-4 text-blue-400" />
                 <span className="text-sm font-semibold text-blue-300 tracking-wide">
-                  Cardiff-Based · Global Reach
+                  UK-Based · Global Reach
                 </span>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-white leading-tight">
@@ -164,7 +164,7 @@ const AboutPage = () => {
                 Solutions
               </h1>
               <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
-                A Cardiff-based tech consultancy and software development partner
+                A UK technology consultancy and software development partner
                 helping businesses grow through digital transformation and custom
                 technology solutions — combining technical expertise with genuine
                 business acumen.
@@ -203,11 +203,11 @@ const AboutPage = () => {
                 </h2>
               </div>
               <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-200">
-                Saan-hub Solutions is a technology consultancy and software
+                Saan-hub Solutions is a UK technology consultancy and software
                 development company that partners with businesses to solve complex
-                challenges through innovative digital solutions. Based in Cardiff,
-                United Kingdom, we work with startups, SMEs, and organisations
-                across industries to drive digital transformation.
+                challenges through innovative digital solutions. Founded in Cardiff,
+                Wales, we work with startups, SMEs, and organisations
+                across the UK and beyond to drive digital transformation.
               </p>
               <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-200">
                 Our team combines deep technical expertise with business
@@ -235,10 +235,10 @@ const AboutPage = () => {
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl px-5 py-4">
                     <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                      Cardiff, United Kingdom
+                      United Kingdom
                     </p>
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                      Serving clients globally since 2019
+                      Founded in Wales · Serving the UK & beyond
                     </p>
                   </div>
                 </div>
