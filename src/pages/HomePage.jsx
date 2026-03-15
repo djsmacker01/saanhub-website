@@ -36,7 +36,7 @@ const HOME_STRUCTURED_DATA = {
       { q: "What services does Saan-hub Solutions offer?", a: "We offer custom web & mobile app development, AI & automation consulting, MVP startup development, digital transformation consulting, SaaS & marketplace development, and technical advisory services." },
       { q: "How much does a web development project cost?", a: "Project costs range from £800 for simple web apps to £15,000+ for complex SaaS platforms. We offer a free strategy session to provide accurate estimates for your specific project." },
       { q: "Does Saan-hub Solutions work with startups?", a: "Yes. We specialise in helping founders validate ideas, build MVPs, and scale their products. Our startup strategy sessions start from just £50." },
-      { q: "Where is Saan-hub Solutions based?", a: "We are a UK technology consultancy, founded in Cardiff, Wales, and work with clients across the UK and globally via remote collaboration." },
+      { q: "Where is Saan-hub Solutions based?", a: "We are based at the University of South Wales, Stiwdio Entrepreneurship (Usk Way, Newport NP20 2BP) and work with clients across the UK and globally via remote collaboration." },
       { q: "Can you integrate AI into my existing business?", a: "Absolutely. Our AI & Automation Consulting service designs and implements intelligent workflows, chatbots, and automation systems for businesses of any size, starting from £300." },
     ]),
     breadcrumbSchema([{ name: "Home", url: `${SITE.URL}/` }]),

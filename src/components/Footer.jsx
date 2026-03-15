@@ -160,7 +160,7 @@ const Footer = ({ setActivePage }) => {
               </li>
               <li className="flex items-start space-x-3 text-sm text-gray-400">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-purple-500" />
-                <span>United Kingdom</span>
+                <span>University of South Wales, Newport NP20 2BP</span>
               </li>
               <li className="text-sm text-gray-500">
                 Mon–Fri · 9am–6pm GMT

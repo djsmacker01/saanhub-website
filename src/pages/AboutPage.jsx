@@ -204,9 +204,10 @@ const AboutPage = () => {
               <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-200">
                 Saan-hub Solutions is a UK technology consultancy and software
                 development company that partners with businesses to solve complex
-                challenges through innovative digital solutions. Founded in Cardiff,
-                Wales, we work with startups, SMEs, and organisations
-                across the UK and beyond to drive digital transformation.
+                challenges through innovative digital solutions. Based at the
+                University of South Wales (Stiwdio Entrepreneurship, Newport), we
+                work with startups, SMEs, and organisations across the UK and
+                beyond to drive digital transformation.
               </p>
               <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-200">
                 Our team combines deep technical expertise with business
@@ -234,10 +235,10 @@ const AboutPage = () => {
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl px-5 py-4">
                     <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                      United Kingdom
+                      University of South Wales
                     </p>
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                      Founded in Wales · Serving the UK & beyond
+                      Stiwdio Entrepreneurship · Newport NP20 2BP
                     </p>
                   </div>
                 </div>

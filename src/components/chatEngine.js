@@ -84,9 +84,10 @@ A world where brilliant ideas are not blocked by technical complexity. Every fou
   {
     id: "location", category: "company",
     patterns: ["where are you", "location", "cardiff", "where are you based", "address", "uk", "united kingdom", "wales", "where do you operate", "office location", "headquarters", "where is the office"],
-    response: `📍 **Headquarters: United Kingdom** 🇬🇧 (Founded in Cardiff, Wales 🏴󠁧󠁢󠁷󠁬󠁳󠁥)
+    response: `📍 **Visit us:** University of South Wales, Stiwdio Entrepreneurship 🏴󠁧󠁢󠁷󠁬󠁳󠁥  
+Usk Way, Newport NP20 2BP
 
-We're a **UK technology consultancy** with roots in Cardiff, Wales — proud of our Welsh heritage and serving clients across the entire UK.
+We're a **UK technology consultancy** based at the University of South Wales (Newport) — proud of our Welsh heritage and serving clients across the entire UK.
 
 **Coverage:**
 • UK-wide projects (remote & in-person where possible)
@@ -945,7 +946,7 @@ All frontends are **mobile-first and fully responsive** as standard.`,
 
 📞 **Phone:** 07459 253102
 📧 **Email:** info@saan-hub.com
-📍 **Location:** United Kingdom (Founded in Wales)
+📍 **Location:** University of South Wales, Stiwdio Entrepreneurship, Usk Way, Newport NP20 2BP
 ⏰ **Hours:** Monday–Friday, 9am–6pm GMT
 
 **Best way to reach us:**

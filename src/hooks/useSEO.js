@@ -13,7 +13,7 @@ const DEFAULT_KEYWORDS =
   "technology consultancy UK, software development UK, AI automation, digital transformation, custom web development, SaaS development, MVP startup, mobile app development, React developer UK, Node.js development, Saan-hub Solutions, technology consultancy Cardiff";
 
 const DEFAULT_IMAGE =
-  "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&w=1200&q=80";
+  "https://www.saan-hub.com/og-image.jpg";
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 const setMeta = (name, content, attr = "name") => {
