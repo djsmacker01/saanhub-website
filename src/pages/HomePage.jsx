@@ -31,7 +31,6 @@ const HOME_STRUCTURED_DATA = {
       url: `${SITE.URL}/`,
       name: "Saan-hub Solutions | UK Technology Consultancy",
       description: "UK technology consultancy specialising in custom web apps, AI automation, SaaS platforms & digital transformation. Serving businesses across the UK. Free consultation available.",
-      dateModified: "2026-03-14",
     }),
     faqSchema([
       { q: "What services does Saan-hub Solutions offer?", a: "We offer custom web & mobile app development, AI & automation consulting, MVP startup development, digital transformation consulting, SaaS & marketplace development, and technical advisory services." },
@@ -304,7 +303,7 @@ const HomePage = ({ setActivePage }) => {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 dark:text-gray-400">Projects Delivered</p>
-                  <p className="text-xl font-extrabold text-gray-900 dark:text-white">100+</p>
+                  <p className="text-xl font-extrabold text-gray-900 dark:text-white">15+</p>
                 </div>
               </div>
               {/* Floating card – top right */}

@@ -143,7 +143,6 @@ const BLOG_STRUCTURED_DATA = {
       url: `${SITE.URL}/blog`,
       name: "Technology Blog | AI, Web Development & Digital Transformation",
       description: "Expert insights on AI automation, web development, digital transformation, and startup growth from Saan-hub Solutions' technology team.",
-      dateModified: "2026-03-14",
     }),
     breadcrumbSchema([
       { name: "Home", url: `${SITE.URL}/` },

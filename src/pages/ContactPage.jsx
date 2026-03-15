@@ -36,7 +36,6 @@ const CONTACT_STRUCTURED_DATA = {
       url: `${SITE.URL}/contact`,
       name: "Contact Saan-hub Solutions | UK | 07459 253102",
       description: "Get in touch with Saan-hub Solutions. Call 07459 253102 or email info@saan-hub.com. Free technology strategy consultation available. Serving businesses across the UK.",
-      dateModified: "2026-03-14",
     }),
     breadcrumbSchema([
       { name: "Home",    url: `${SITE.URL}/` },
@@ -424,7 +423,7 @@ const ContactPage = () => {
                 <p className="text-sm text-blue-100 mb-4">Follow our work and latest updates</p>
                 <div className="flex space-x-3">
                   {[
-                    { icon: <Linkedin className="w-5 h-5" />, href: "https://linkedin.com/", label: "LinkedIn" },
+                    { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/company/saan-hub-solutions", label: "LinkedIn" },
                     { icon: <Github className="w-5 h-5" />, href: "https://github.com/djsmacker01/", label: "GitHub" },
                     { icon: <Mail className="w-5 h-5" />, href: "mailto:info@saan-hub.com", label: "Email" },
                   ].map((s, i) => (
