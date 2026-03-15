@@ -13,10 +13,10 @@ const Header = ({ isDarkMode }) => {
             <span>+447459253102</span>
           </a>
           <a
-            href="mailto:adedeji.adewale2022@gmail.com"
+            href="mailto:info@saan-hub.com"
             className={`flex items-center space-x-2 ${isDarkMode ? "text-gray-300 hover:text-white" : "text-gray-600 hover:text-gray-900"} transition-colors`}>
             <Mail className="w-4 h-4" />
-            <span>adedeji.adewale2022@gmail.com</span>
+            <span>info@saan-hub.com</span>
           </a>
           <div className={`flex items-center space-x-2 ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}>
             <MapPin className="w-4 h-4" />

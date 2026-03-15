@@ -23,7 +23,6 @@ const ABOUT_STRUCTURED_DATA = {
       url: `${SITE.URL}/about`,
       name: "About Saan-hub Solutions | UK Technology Consultancy",
       description: "Meet the team behind Saan-hub Solutions — UK technology experts helping startups and businesses build digital products, AI systems, and automation platforms.",
-      dateModified: "2026-03-14",
     }),
     breadcrumbSchema([
       { name: "Home",  url: `${SITE.URL}/` },
@@ -60,31 +59,31 @@ const AboutPage = () => {
       social: {
         linkedin: "https://www.linkedin.com/in/nuruade",
         github: "https://www.github.com/djsmacker01/",
-        email: "mailto:adedeji.adewale2022@gmail.com",
+        email: "mailto:success@saan-hub.com",
       },
     },
     {
       name: "Soji",
       role: "IT Support Technician",
-      image: "/team/soji.jpg",
+      image: "https://ui-avatars.com/api/?name=Soji&size=500&background=4f46e5&color=fff&bold=true",
       bio: "Experienced IT support professional specialising in system administration, network troubleshooting, and technical support. Dedicated to providing efficient solutions.",
       skills: ["Sys Admin", "Networking", "Cloud", "Support"],
       social: {
-        linkedin: "https://www.linkedin.com/in/nuruade/",
-        github: "https://www.github.com/djsmacker01",
+        linkedin: "",
+        github: "",
         email: "mailto:soji@saan-hub.com",
       },
     },
     {
       name: "Nurudeen",
       role: "Mechanical Engineer",
-      image: "/saan-hub-logo.jpg",
+      image: "/team/nurudeen.jpg",
       bio: "Skilled mechanical engineer with expertise in design, analysis, and manufacturing processes. Specialising in product development, CAD modelling, and systems optimisation.",
       skills: ["CAD Design", "Systems", "Product Dev", "Analysis"],
       social: {
-        linkedin: "https://www.linkedin.com/in/nuruade/",
-        github: "https://github.com/djsmacker01/",
-        email: "mailto:adedeji.adewale2022@gmail.com",
+        linkedin: "",
+        github: "",
+        email: "mailto:nurudeen@saan-hub.com",
       },
     },
   ];
@@ -320,25 +319,31 @@ const AboutPage = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   {/* Social links on hover */}
                   <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-3 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                    <a
-                      href={member.social?.linkedin || "#"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-blue-600 hover:text-white transition-colors">
-                      <Linkedin className="w-4 h-4 text-blue-600 group-hover:text-white" />
-                    </a>
-                    <a
-                      href={member.social?.github || "#"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-800 hover:text-white transition-colors">
-                      <Github className="w-4 h-4" />
-                    </a>
-                    <a
-                      href={member.social?.email || "#"}
-                      className="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-red-500 hover:text-white transition-colors">
-                      <Mail className="w-4 h-4 text-red-500 group-hover:text-white" />
-                    </a>
+                    {member.social?.linkedin && (
+                      <a
+                        href={member.social.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-blue-600 hover:text-white transition-colors">
+                        <Linkedin className="w-4 h-4 text-blue-600 group-hover:text-white" />
+                      </a>
+                    )}
+                    {member.social?.github && (
+                      <a
+                        href={member.social.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-800 hover:text-white transition-colors">
+                        <Github className="w-4 h-4" />
+                      </a>
+                    )}
+                    {member.social?.email && (
+                      <a
+                        href={member.social.email}
+                        className="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-red-500 hover:text-white transition-colors">
+                        <Mail className="w-4 h-4 text-red-500 group-hover:text-white" />
+                      </a>
+                    )}
                   </div>
                 </div>
 

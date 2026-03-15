@@ -3,10 +3,8 @@ import {
   Phone,
   Mail,
   MapPin,
-  Facebook,
   Twitter,
   Linkedin,
-  Instagram,
   Github,
   Cpu,
   ArrowRight,
@@ -34,10 +32,8 @@ const Footer = ({ setActivePage }) => {
   ];
 
   const socials = [
-    { icon: <Facebook className="w-4 h-4" />, href: "https://facebook.com/saan-hub", label: "Facebook", color: "hover:bg-blue-600" },
-    { icon: <Twitter className="w-4 h-4" />, href: "https://x.com/djsmacker01", label: "Twitter/X", color: "hover:bg-sky-500" },
-    { icon: <Linkedin className="w-4 h-4" />, href: "https://www.linkedin.com/in/nuruade/", label: "LinkedIn", color: "hover:bg-blue-700" },
-    { icon: <Instagram className="w-4 h-4" />, href: "https://instagram.com/saan-hub", label: "Instagram", color: "hover:bg-pink-600" },
+    { icon: <Twitter className="w-4 h-4" />, href: "https://x.com/saanhubsolutions", label: "Twitter/X", color: "hover:bg-sky-500" },
+    { icon: <Linkedin className="w-4 h-4" />, href: "https://www.linkedin.com/company/saan-hub-solutions", label: "LinkedIn", color: "hover:bg-blue-700" },
     { icon: <Github className="w-4 h-4" />, href: "https://github.com/djsmacker01", label: "GitHub", color: "hover:bg-gray-600" },
   ];
 
