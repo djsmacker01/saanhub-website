@@ -253,7 +253,7 @@ const ProductsPage = ({ activePage, setActivePage }) => {
           <div className="inline-flex items-center space-x-2 bg-blue-500/15 border border-blue-400/30 rounded-full px-5 py-2 mb-6">
             <Cpu className="w-4 h-4 text-blue-400" />
             <span className="text-sm font-semibold text-blue-300 tracking-wide">
-              Built in Cardiff · Used Globally
+              Built in the UK · Used Globally
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-white">
@@ -405,10 +405,10 @@ const ProductsPage = ({ activePage, setActivePage }) => {
             <div className="flex-1 text-white">
               <h3 className="text-3xl sm:text-4xl font-bold mb-5">Global Reach</h3>
               <p className="text-lg text-blue-100 leading-relaxed max-w-xl">
-                While proudly headquartered in Cardiff, our vision extends globally.
+                While proudly founded in Wales, our vision extends globally.
                 We deliver world-class digital solutions that transcend borders,
-                helping businesses worldwide achieve their digital transformation
-                goals through innovative technology and exceptional service.
+                helping businesses across the UK and worldwide achieve their digital
+                transformation goals through innovative technology and exceptional service.
               </p>
             </div>
             <div className="grid grid-cols-3 gap-6 text-center text-white">
