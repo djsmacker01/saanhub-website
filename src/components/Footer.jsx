@@ -18,6 +18,7 @@ const Footer = ({ setActivePage }) => {
     { label: "Home", page: "home" },
     { label: "About", page: "about" },
     { label: "Services", page: "services" },
+    { label: "AI Readiness", page: "ai-readiness" },
     { label: "Products", page: "products" },
     { label: "Blog", page: "blog" },
     { label: "Contact", page: "contact" },

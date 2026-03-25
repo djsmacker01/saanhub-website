@@ -12,12 +12,14 @@ import ContactPage from "./pages/ContactPage";
 import ProductsPage from "./pages/ProductsPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import LoadingPage from "./pages/LoadingPage";
+import AIReadinessPage from "./pages/AIReadinessPage";
 
 // Map page IDs (used by child components) → URL paths
 const PAGE_TO_PATH = {
   home: "/",
   about: "/about",
   services: "/services",
+  "ai-readiness": "/ai-readiness",
   products: "/products",
   blog: "/blog",
   contact: "/contact",
@@ -79,6 +81,7 @@ const App = () => {
               <Route path="/" element={<HomePage setActivePage={handlePageChange} />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/services" element={<ServicesPage setActivePage={handlePageChange} />} />
+              <Route path="/ai-readiness" element={<AIReadinessPage setActivePage={handlePageChange} />} />
               <Route path="/products" element={<ProductsPage setActivePage={handlePageChange} />} />
               <Route path="/blog" element={<BlogPage setActivePage={handlePageChange} />} />
               <Route path="/contact" element={<ContactPage />} />

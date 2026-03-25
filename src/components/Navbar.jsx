@@ -13,6 +13,7 @@ const Navbar = ({ setActivePage, isDarkMode, setIsDarkMode }) => {
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
     { id: "services", label: "Services" },
+    { id: "ai-readiness", label: "AI Readiness" },
     { id: "products", label: "Products", hasDropdown: true },
     { id: "blog", label: "Blog" },
     { id: "contact", label: "Contact" },
